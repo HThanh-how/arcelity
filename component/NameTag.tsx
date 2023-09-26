@@ -18,7 +18,8 @@ import { FcAssistant, FcDonate, FcInTransit } from "react-icons/fc";
 export default function SimpleThreeColumns() {
   return (
 
-    <Container maxW="7xl" bgColor={"gray.50"} py={4} my={3} borderRadius='full'>
+    <Box bg="black">
+    <Container maxW="7xl"  py={4} my={3} borderRadius='full'>
   
 <HStack spacing={8}  alignItems='right' justifyContent='space-between'>
 <Heading size={"md"} justifySelf={'flex-start'}> Apple Iphone</Heading>
@@ -67,5 +68,6 @@ export default function SimpleThreeColumns() {
     </Tag>
     </Flex>
 </HStack></Container>
+</Box>
   );
 }

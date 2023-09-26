@@ -19,16 +19,17 @@ export default function SimpleThreeColumns() {
   
     return (
       <Box
-        backgroundImage="url('/static/Product/Background.webp')"
+        // backgroundImage="url('/static/Product/Background.webp')"
         bgSize="cover"
         bgPos="center"
         position="relative"
         bgAttachment={"fixed"}
         id={"Product"}
+        bg="black"
       >
-        <Box bgColor={"rgba(255, 255, 255, 0.8)"} p={4}  pb={15}>
+        <Box p={4}  pb={15}>
 
-          <Container maxW={"7xl"}>
+          <Container maxW={"8xl"}>
             <SimpleGrid
               autoRows={{ base: "auto", md: "auto" }}
               columns={{ base: 1, md: 2, lg: 4 }}
