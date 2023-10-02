@@ -3,7 +3,7 @@ import { AspectRatio, Container, Image } from "@chakra-ui/react";
 // Note: GameImages Component
 export default function GameImages() {
   return (
-    <Container p={0} maxW={"full"} pr={{ sm: 0, md: 10, lg: 10 }}>
+    <Container p={0} maxW={"full"}>
       <AspectRatio maxW={"full"} ratio={5 / 3}>
         <Image
           ml={0}

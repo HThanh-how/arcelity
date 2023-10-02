@@ -3,7 +3,7 @@ import SysReq from "./SysReq";
 
 export default function GameDescription() {
   return (
-    <VStack spacing={4}>
+    <VStack spacing={4} w={"full"}>
       <Text>
         Phantom Liberty is a spy-thriller expansion for the open-world
         action-adventure RPG Cyberpunk 2077. As cyber-enhanced mercenary V, join

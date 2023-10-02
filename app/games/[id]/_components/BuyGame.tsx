@@ -14,7 +14,7 @@ import React from "react";
 
 export default function BuyGame() {
   return (
-    <Container p={0}>
+    <Container p={0} ml={{ lg: 10 }}>
       <Card border={"none"} bg={"none"} textColor={"white"}>
         <Center p={4}>
           <Image
