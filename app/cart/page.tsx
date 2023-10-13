@@ -1,3 +1,5 @@
+"use client";
+
 import { Container, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 import ItemsList from "./_components/ItemsList";
 import CartDetail from "./_components/CartDetail";
