@@ -35,7 +35,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ChakraProvider>
           <Navbar />
-          {children}
+          {children} 
+      
         </ChakraProvider>
       </body>
     </html>
