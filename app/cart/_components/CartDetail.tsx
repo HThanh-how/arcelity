@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardBody,
   CardHeader,
@@ -33,10 +34,21 @@ export default function CartDetail() {
         </VStack>
         <Divider my={5} />
         <Flex w={"full"}>
-          <Text>Subtotal</Text>
+          <Text fontWeight={"bold"}>Subtotal</Text>
           <Spacer />
           <Text> lmao</Text>
         </Flex>
+        <Button
+          mt={5}
+          bg={"blue.500"}
+          _hover={{ bg: "blue.400" }}
+          textTransform={"uppercase"}
+          w={"full"}
+          textColor={"white"}
+        >
+          {" "}
+          check out
+        </Button>
       </CardBody>
     </Card>
   );

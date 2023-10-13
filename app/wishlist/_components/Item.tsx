@@ -33,6 +33,8 @@ export default function Item() {
             </CardHeader>
           </Flex>
         </GridItem>
+
+        {/* Game price and button area*/}
         <GridItem colSpan={1} mt={{ sm: 5, md: 0 }}>
           <Text pb={5}>455.00d</Text>
           <Button
@@ -42,15 +44,17 @@ export default function Item() {
             _hover={{ textColor: "white" }}
             pr={{ sm: 5, lg: 0 }}
           >
-            <Text textDecor={"underline"}>Move to wishlist</Text>
+            <Text textDecor={"underline"}>Remove</Text>
           </Button>
           <Button
-            bg={"none"}
             textColor={"whiteAlpha.600"}
             p={0}
-            _hover={{ textColor: "white" }}
+            bg={"none"}
+            border={"2px"}
+            _hover={{ textColor: "white", bg: "whiteAlpha.400" }}
+            w={"full"}
           >
-            <Text textDecor={"underline"}>Remove</Text>
+            <Text textTransform={"uppercase"}>Add to cart</Text>
           </Button>
         </GridItem>
       </SimpleGrid>
