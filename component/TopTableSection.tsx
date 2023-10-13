@@ -1,4 +1,4 @@
-import Product from "./ProductCard";
+import Product from "./ProductCardTable";
 import { ReactElement, useState } from "react";
 import {
   Box,
@@ -11,21 +11,23 @@ import {
   Container,
   Heading,
   Button,
+  HStack,
+  VStack,
 } from "@chakra-ui/react";
 import { FcAssistant, FcDonate, FcInTransit } from "react-icons/fc";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import NavigationTag from "@/component/NavigationTag"
+import NavigationTag from "@/component/NavigationTag";
 import Slider from "react-slick";
+import Collum from "./TopTableCollum";
 
-
-export default function SimpleThreeColumns() {
+export default function TopTable() {
   var settings = {
-    style: { width: '70vw', justifyContent: "space-between"},
+    style: { width: "70vw", justifyContent: "space-between" },
     // dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     swipeToSlide: true,
@@ -37,7 +39,7 @@ export default function SimpleThreeColumns() {
       {
         breakpoint: 2000,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           // dots: true
@@ -69,19 +71,23 @@ export default function SimpleThreeColumns() {
       },
     ],
   };
-  
-    return ( 
 
-      <Box alignSelf={"center"} bg={"black"} w="100%" justifyContent="center" alignItems={"center"}   >
-        <NavigationTag name="Game on Sale" url="#" />
-        {/* <Flex width="70vw">
+  return (
+    <Box
+      alignSelf={"center"}
+      bg={"black"}
+      w="100%"
+      justifyContent="center"
+      alignItems={"center"}
+    >
+      {/* <NavigationTag name="Game on Sale" url="#" /> */}
+      {/* <Flex width="70vw">
         <Button>Game on Sale</Button></Flex> */}
-        <Flex justify={'center'} py={4}>
-          <Slider {...settings} >
-                <Product/><Product/><Product/><Product/><Product/><Product/><Product/>
-              </Slider>
-              </Flex>
-      </Box>
-    );
-  }    
-  
+   
+        <Slider {...settings}>
+<Collum/><Collum/><Collum/>
+        </Slider>
+     
+    </Box>
+  );
+}

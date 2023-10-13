@@ -81,7 +81,7 @@ function ProductAddToCart() {
     setShowIcon(false);
   };
   return (
-    <Flex w="15vw" alignItems="center" justifyContent="center">
+    <Flex w="15vw" alignItems="left" justifyContent="center" m={4}>
       <Box
         bg={useColorModeValue("white", "gray.800")}
         maxW="xs"

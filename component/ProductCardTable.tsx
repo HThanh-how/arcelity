@@ -29,12 +29,10 @@ const data = {
   price: 4.5,
   rating: 4.2,
   numReviews: 34,
-  imageAlt:"This is game",
+  imageAlt: "This is game",
   discount: "20%",
   initialPrice: 24000,
-  oldPrice: 30000
-
-
+  oldPrice: 30000,
 };
 
 interface RatingProps {
@@ -98,7 +96,12 @@ function ProductAddToCart() {
         )} */}
 
         {showIcon && (
-          <Tooltip hasArrow label="Add to wishlist" bg="black" placement={"top"}>
+          <Tooltip
+            hasArrow
+            label="Add to wishlist"
+            bg="black"
+            placement={"top"}
+          >
             <Button
               bg={"transparent"}
               _hover={{ bg: "transperent" }}
@@ -126,11 +129,13 @@ function ProductAddToCart() {
           roundedTop="lg"
         />
 
-        <Box p="6">
+
+      </Box>
+      <Box p="6">
           <Box display="flex" alignItems="baseline">
             {data.isNew && (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
-                BASE GAME
+              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="orange">
+                #Top 10
               </Badge>
             )}
           </Box>
@@ -142,35 +147,37 @@ function ProductAddToCart() {
               as="h4"
               lineHeight="tight"
               isTruncated
+              color={"white"}
             >
               {data.name}
             </Box>
 
-            {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
           </Flex>
 
-          <Flex justifyContent="space-between" alignContent="center" >
-          <Box fontSize="xl" color={"red.400"} pt={5}>
-              <Icon as={TriangleDownIcon} h={8}/> {data.discount} 
-              </Box>
+          <Flex justifyContent="space-between" alignContent="center">
+
             <VStack>
-            {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
-            <Box fontSize="xl" color={useColorModeValue("gray.400", "white")}  style={{ textDecoration: 'line-through' }}>
-              <Box as="span" color={"gray.400"} fontSize="lg">
-                đ {data.oldPrice.toLocaleString('vi-VN')}
+              {/* <Box
+                fontSize="xl"
+                color={useColorModeValue("white", "white")}
+                style={{ textDecoration: "line-through" }}
+              >
+                <Box as="span" color={"white"} fontSize="lg">
+                  đ {data.oldPrice.toLocaleString("vi-VN")}
+                </Box>
+              </Box> */}
+              <Box
+                fontSize="2xl"
+                color={useColorModeValue("white", "white")}
+              >
+                <Box as="span" color={"white"} fontSize="lg">
+                  đ
+                </Box>
+                {data.initialPrice.toLocaleString("vi-VN")}
               </Box>
-              
-            </Box>
-            <Box fontSize="2xl" color={useColorModeValue("gray.800", "white")}>
-              <Box as="span" color={"gray.600"} fontSize="lg">
-                đ
-              </Box>
-              {data.initialPrice.toLocaleString('vi-VN')}
-            </Box>
             </VStack>
           </Flex>
         </Box>
-      </Box>
     </Flex>
   );
 }

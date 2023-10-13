@@ -1,15 +1,16 @@
-import { Box, Flex, Input, Button, Stack, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Input, Button, Stack, useColorModeValue, VStack } from '@chakra-ui/react';
 
 const SearchBar = () => {
   return (
-    <Flex bg="black" alignItems={"center"}  justify={'center'} textColor={"white"} >
-    <Flex  p={4} align="center">
-    <Stack spacing={4} direction={{ base: 'column', md: 'row' }} w={'full'}>
+    <Flex bg="black" alignItems={"center"} justifyContent={"center"}  textColor={"white"} pt="6" pb="2">
+    
+    <Flex width="70vw"  alignItems={"center"}>
           <Input
+          width="400px"
             type={'text'}
             placeholder={'Tìm kiếm'}
             color={useColorModeValue('gray.200', 'gray.700')}
-            bg={useColorModeValue('gray.900', 'gray.600')}
+            bg={useColorModeValue('#171717', 'gray.600')}
             rounded={'full'}
             border={0}
             _focus={{
@@ -17,13 +18,13 @@ const SearchBar = () => {
               outline: 'gray.200',
             }}
           /> 
-          </Stack>
       <Flex ml={4} _hover={{color: "blue.500"}} cursor={"pointer"} >Discover</Flex>
       <Flex ml={4} _hover={{color: "blue.500"}} cursor={"pointer"}  >Browser</Flex>
       <Flex ml={4} _hover={{color: "blue.500"}} cursor={"pointer"} >News</Flex>
+    
+      </Flex>
     </Flex>
-    </Flex>
-  );
+  ); 
 };
 
 export default SearchBar;
