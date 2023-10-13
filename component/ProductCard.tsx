@@ -141,6 +141,7 @@ function ProductAddToCart() {
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
+              textColor={"black"}
               isTruncated
             >
               {data.name}
