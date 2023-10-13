@@ -4,10 +4,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "../component/Navbar";
-import theme from "@/theme";;
+import theme from "@/theme";
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
@@ -33,10 +32,9 @@ export default function RootLayout({
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       <body className={inter.className}>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <Navbar />
-          {children} 
-      
+          {children}
         </ChakraProvider>
       </body>
     </html>
