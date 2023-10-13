@@ -79,10 +79,10 @@ function ProductAddToCart() {
     setShowIcon(false);
   };
   return (
-    <Flex w="15vw" alignItems="center" justifyContent="center">
+    <Flex maxW="20vw" alignItems="left" justifyContent="center">
       <Box
         bg={useColorModeValue("white", "gray.800")}
-        maxW="xs"
+        maxW="sm"
         borderWidth="1px"
         rounded="lg"
         shadow="lg"
@@ -131,7 +131,7 @@ function ProductAddToCart() {
 
 
       </Box>
-      <Box p="6">
+      {/* <Box p="6">
           <Box display="flex" alignItems="baseline">
             {data.isNew && (
               <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="orange">
@@ -157,15 +157,7 @@ function ProductAddToCart() {
           <Flex justifyContent="space-between" alignContent="center">
 
             <VStack>
-              {/* <Box
-                fontSize="xl"
-                color={useColorModeValue("white", "white")}
-                style={{ textDecoration: "line-through" }}
-              >
-                <Box as="span" color={"white"} fontSize="lg">
-                  đ {data.oldPrice.toLocaleString("vi-VN")}
-                </Box>
-              </Box> */}
+
               <Box
                 fontSize="2xl"
                 color={useColorModeValue("white", "white")}
@@ -177,7 +169,7 @@ function ProductAddToCart() {
               </Box>
             </VStack>
           </Flex>
-        </Box>
+        </Box> */}
     </Flex>
   );
 }

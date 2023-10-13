@@ -30,15 +30,14 @@ const NavLink = (props: Props) => {
 
   return (
     <Box
-      as="a"
-      px={2}
-      py={1}
+     px={2}
+      py={1} 
       rounded={'md'}
       _hover={{
         textDecoration: 'none',
         bg: useColorModeValue('gray.800', 'gray.700'),
       }}
-      href={'#'}>
+      >
       {children}
     </Box>
   )
@@ -66,8 +65,8 @@ export default function Simple() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
-            <Menu>
+          <Flex alignItems={'center'} color="#171717">
+            <Menu >
               <MenuButton
                 as={Button}
                 rounded={'full'}

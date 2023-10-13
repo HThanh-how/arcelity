@@ -117,13 +117,13 @@ const ImageCarousel = () => {
   bottom={0}
   left={0}
   p={10}
-  maxW={"20vw"}
+  maxW={"30vw"}
   borderRadius={10}
 
 >
    
-    <Text fontSize="4xl" m={4} color="white"  textAlign="left" fontWeight={"800"} textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}>Grand Theft Auto VI</Text>
-    <Text fontSize="lg"  m={4} color="gray.200" textAlign="left">AVAILABLE NOW</Text>
+    <Text fontSize="3xl" m={4} color="white"  textAlign="left" fontWeight={"800"} textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}>Grand Theft Auto VI</Text>
+    <Text fontSize="sm"  m={4} color="gray.200" textAlign="left">AVAILABLE NOW</Text>
     <Text fontSize="lg" m={4}  textAlign="left">component with its corresponding image and text is displayed in a wrapped manner, preventing them from overlapping each other.</Text>
     <Text fontSize="lg"   m={4} color="gray.200" textAlign="left">Only $19.99</Text>
     {/* <Text fontSize="lg">Alt: Grand Theft Auto VI cover image</Text> */}
@@ -137,6 +137,7 @@ const ImageCarousel = () => {
       size="xl"
       width={200}
       textColor={"black"}
+     
     >
       GET NOW
     </Button>

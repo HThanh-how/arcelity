@@ -27,7 +27,7 @@ export default function Collum() {
   return (
   
 
-      <VStack  spacing={12}>
+      <VStack  >
         <Flex
           ml={4}
           _hover={{ color: "blue.500", transform: "translateX(10px)" }}
@@ -35,17 +35,18 @@ export default function Collum() {
           fontWeight="800"
           onClick={() => router.push("#")}
           transition={"all .3s ease"}
+          color={"white"}
         >
           {"Top 10"} <Icon w={5} h={5} as={ChevronRightIcon} />
          
         </Flex>
+        {/* <Product />
         <Product />
         <Product />
         <Product />
         <Product />
         <Product />
-        <Product />
-        <Product />
+        <Product /> */}
       </VStack>
    
   );

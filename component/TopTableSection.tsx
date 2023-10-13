@@ -23,7 +23,7 @@ import Collum from "./TopTableCollum";
 
 export default function TopTable() {
   var settings = {
-    style: { width: "70vw", justifyContent: "space-between" },
+    style: { width: "70vw" },
     // dots: true,
     infinite: true,
     speed: 500,
@@ -74,11 +74,11 @@ export default function TopTable() {
 
   return (
     <Box
-      alignSelf={"center"}
+      alignSelf={"left"}
       bg={"black"}
       w="100%"
-      justifyContent="center"
-      alignItems={"center"}
+      justifyContent="left"
+      alignItems={"left"}
     >
       {/* <NavigationTag name="Game on Sale" url="#" /> */}
       {/* <Flex width="70vw">
