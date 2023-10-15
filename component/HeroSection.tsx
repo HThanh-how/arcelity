@@ -26,41 +26,47 @@ let HeroSectionAPI: {
   description: string;
   price: number;
   status: boolean;
+  name: string;
 }[] = [
   {
-    imgUrl: "https://picsum.photos/id/92/4000/4000.jpg",
+    imgUrl: "https://www.apple.com/newsroom/videos/iphone-15-pro-action-button/posters/Apple-iPhone-15-Pro-lineup-Action-button-230912.jpg.large_2x.jpg",
     imgAlt: "alt1",
-    description: "description1",
+    description: "Featuring a strong and lightweight titanium design with new contoured edges, a new Action button, powerful camera upgrades, and A17 Pro for next-level performance and mobile gaming",
     price: 10,
     status: true,
+    name: "Iphone 15 Pro Max"
   },
   {
-    imgUrl: "https://picsum.photos/id/925/4000/4000.jpg",
+    imgUrl: "https://www.apple.com/v/macbook-pro-14-and-16/e/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg",
     imgAlt: "alt2",
-    description: "description2",
+    description: "Supercharged by M2 Pro or M2 Max, MacBook Pro takes its power and efficiency further than ever.",
     price: 20,
     status: false,
+    name: ' Macbook 16 Pro'
   },
   {
-    imgUrl: "https://picsum.photos/id/935/4000/4000.jpg",
+    imgUrl: "https://images.macrumors.com/t/7hZCaaMo4T4JV6eLoJX2ou4lyqI=/1600x0/article-new/2021/05/ipad-pro-m1-feature.jpg",
     imgAlt: "alt3",
-    description: "description3",
+    description: "Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level Apple Pencil capabilities. Powerful new features in iPadOS. The ultimate iPad experience.",
     price: 30,
     status: true,
+    name: "Ipad Pro M1"
   },
   {
-    imgUrl: "https://picsum.photos/id/915/4000/4000.jpg",
+    imgUrl: "https://www.apple.com/newsroom/images/product/watch/standard/Apple-Watch-S8-2up-hero-220907.jpg.og.jpg?202308290434",
     imgAlt: "alt4",
-    description: "description4",
+    description: "The new dual-core CPU has 5.6 billion transistors — 60 percent more than the S8 chip. A new four-core Neural Engine processes machine learning tasks up to two times faster",
     price: 40,
     status: false,
+    name: "Apple Watch 6"
   },
   {
-    imgUrl: "https://picsum.photos/id/945/4000/4000.jpg",
+    imgUrl: "https://www.apple.com/v/airpods-pro/h/images/meta/og__eui2mpgzwyaa_overview.png?202309210612",
     imgAlt: "alt4",
-    description: "description4",
+    description: "All-new Adaptive Audio intelligently tailors noise control to your environment.",
     price: 40,
     status: false,
+    name: "Airpods Pro"
   },
 ];
 
@@ -122,9 +128,9 @@ const ImageCarousel = () => {
 
 >
    
-    <Text fontSize="3xl" m={4} color="white"  textAlign="left" fontWeight={"800"} textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}>Grand Theft Auto VI</Text>
+    <Text fontSize="3xl" m={4} color="white"  textAlign="left" fontWeight={"800"} textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}>{images[currentImageIndex].name}</Text>
     <Text fontSize="sm"  m={4} color="gray.200" textAlign="left">AVAILABLE NOW</Text>
-    <Text fontSize="lg" m={4}  textAlign="left">component with its corresponding image and text is displayed in a wrapped manner, preventing them from overlapping each other.</Text>
+    <Text fontSize="lg" m={4}  textAlign="left">{images[currentImageIndex].description}</Text>
     <Text fontSize="lg"   m={4} color="gray.200" textAlign="left">Only $19.99</Text>
     {/* <Text fontSize="lg">Alt: Grand Theft Auto VI cover image</Text> */}
     <Flex>
@@ -187,7 +193,7 @@ const ImageCarousel = () => {
                       p={4}
                       style={{ overflowWrap: "break-word" }}
                     >
-                     Bằng cách thêm thuộc tính </Text>
+                     {image.name} </Text>
                     
                     {/* <Text textColor={"gray.50"}>Intro</Text> */}
    
