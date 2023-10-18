@@ -14,6 +14,7 @@ import {
   Button,
   IconButton,
   HStack,
+  Text,
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
@@ -79,10 +80,12 @@ function ProductAddToCart() {
     setShowIcon(false);
   };
   return (
-    <Flex maxW="20vw" alignItems="left" justifyContent="center">
+    <Flex maxW={{base:"300px", md:"400px"}} alignItems="left" justifyContent="center" pt={4}>
       <Box
         bg={useColorModeValue("white", "gray.800")}
-        maxW="sm"
+        maxW={{base:"80px", md:"150px"}}
+        maxH={{base:"80px", md:"150px"}}
+
         borderWidth="1px"
         rounded="lg"
         shadow="lg"
@@ -131,45 +134,10 @@ function ProductAddToCart() {
 
 
       </Box>
-      {/* <Box p="6">
-          <Box display="flex" alignItems="baseline">
-            {data.isNew && (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="orange">
-                #Top 10
-              </Badge>
-            )}
-          </Box>
-
-          <Flex mt="1" justifyContent="space-between" alignContent="center">
-            <Box
-              fontSize="2xl"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              isTruncated
-              color={"white"}
-            >
-              {data.name}
-            </Box>
-
-          </Flex>
-
-          <Flex justifyContent="space-between" alignContent="center">
-
-            <VStack>
-
-              <Box
-                fontSize="2xl"
-                color={useColorModeValue("white", "white")}
-              >
-                <Box as="span" color={"white"} fontSize="lg">
-                  đ
-                </Box>
-                {data.initialPrice.toLocaleString("vi-VN")}
-              </Box>
-            </VStack>
-          </Flex>
-        </Box> */}
+      <VStack p={4}>
+        <Text fontSize={{base:"xl", md:"2xl"}} fontWeight={"800"}>Iphone 13 Pro Max</Text>
+        <Text fontSize={{base:"sm", md:"xl"}}>29.999.000 đ</Text>
+      </VStack>
     </Flex>
   );
 }

@@ -23,6 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
       <link
         rel="stylesheet"
         type="text/css"
@@ -34,11 +35,12 @@ export default function RootLayout({
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
+      </head>
       <body className={inter.className}>
         <ChakraProvider theme={theme}>
           <Navbar />
           {children} 
-      <Footer/>
+      {/* <Footer/> */}
         </ChakraProvider>
       </body>
     </html>

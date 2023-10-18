@@ -47,7 +47,7 @@ export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <>
+    
       <Box bg={useColorModeValue('#171717', 'gray.900')} px={4} textColor={"white"}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
@@ -102,6 +102,6 @@ export default function Simple() {
           </Box>
         ) : null}
       </Box>
-    </>
+    
   )
 }

@@ -23,7 +23,6 @@ import Collum from "./TopTableCollum";
 
 export default function TopTable() {
   var settings = {
-    style: { width: "70vw" },
     // dots: true,
     infinite: true,
     speed: 500,
@@ -48,7 +47,7 @@ export default function TopTable() {
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           // dots: true
@@ -57,9 +56,10 @@ export default function TopTable() {
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 1,
+          centerMode: true,
         },
       },
       {
@@ -67,27 +67,23 @@ export default function TopTable() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+      
         },
       },
     ],
   };
 
   return (
-    <Box
-      alignSelf={"left"}
-      bg={"black"}
-      w="100%"
-      justifyContent="left"
-      alignItems={"left"}
-    >
-      {/* <NavigationTag name="Game on Sale" url="#" /> */}
-      {/* <Flex width="70vw">
-        <Button>Game on Sale</Button></Flex> */}
+
+    <Box display="flex" justifyContent="center" alignItems="center" pt={4}>
+    <Box alignSelf="center" w={{base:"100vw", lg:"70vw"}} justifyContent="space-between" pl={8}>
+
    
         <Slider {...settings}>
 <Collum/><Collum/><Collum/>
+
         </Slider>
      
-    </Box>
+    </Box>  </Box>
   );
 }

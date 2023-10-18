@@ -81,11 +81,11 @@ function ProductAddToCart() {
     setShowIcon(false);
   };
   return (
-    <Flex w="15vw" alignItems="center" justifyContent="center">
+    <Flex w={{base:"200px", md:"15vw"}} alignItems="center" justifyContent="center">
       <Box
         bg={useColorModeValue("white", "gray.800")}
-        maxW="xs"
-        borderWidth="1px"
+        // maxW="xs"
+        // borderWidth="1px"
         rounded="lg"
         shadow="lg"
         position="relative"
@@ -98,7 +98,7 @@ function ProductAddToCart() {
         )} */}
 
         {showIcon && (
-          <Tooltip hasArrow label="Add to wishlist" bg="black" placement={"top"}>
+          <Tooltip hasArrow label="Add to wishlist" bg="black" placement={"top"} transition={"all 0.3s"}>
             <Button
               bg={"transparent"}
               _hover={{ bg: "transperent" }}
@@ -114,6 +114,7 @@ function ProductAddToCart() {
                 w={7}
                 alignSelf={"right"}
                 zIndex={4}
+                color={"white"}
                 position="absolute"
               />
             </Button>
@@ -129,7 +130,7 @@ function ProductAddToCart() {
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             {data.isNew && (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+              <Badge rounded="full" px="2" fontSize={{base: "0.6em", md:"0.8em"}} colorScheme="green">
                 BASE GAME
               </Badge>
             )}
@@ -137,7 +138,7 @@ function ProductAddToCart() {
 
           <Flex mt="1" justifyContent="space-between" alignContent="center">
             <Box
-              fontSize="2xl"
+              fontSize={{base: "xl", md:"2xl"}}
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
@@ -151,18 +152,18 @@ function ProductAddToCart() {
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center" >
-          <Box fontSize="xl" color={"red.400"} pt={5}>
+          <Box fontSize={{base: "sm", md:"xl"}} color={"red.400"} pt={{base:0, md:5}}>
               <Icon as={TriangleDownIcon} h={8}/> {data.discount} 
               </Box>
             <VStack>
             {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
-            <Box fontSize="xl" color={useColorModeValue("gray.400", "white")}  style={{ textDecoration: 'line-through' }}>
+            <Box fontSize={{base: "sm", md:"xl"}} color={useColorModeValue("gray.400", "white")}  style={{ textDecoration: 'line-through' }}>
               <Box as="span" color={"gray.400"} fontSize="lg">
                 đ {data.oldPrice.toLocaleString('vi-VN')}
               </Box>
               
             </Box>
-            <Box fontSize="2xl" color={useColorModeValue("gray.800", "white")}>
+            <Box fontSize={{base: "xl", md:"2xl"}} color={useColorModeValue("gray.800", "white")}>
               <Box as="span" color={"gray.600"} fontSize="lg">
                 đ
               </Box>

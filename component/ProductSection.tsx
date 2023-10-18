@@ -21,13 +21,12 @@ import Slider from "react-slick";
 
 export default function SimpleThreeColumns() {
   var settings = {
-    style: { width: '70vw', justifyContent: "space-between"},
+    // style: { justifyContent: "space-between"},
     // dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
     initialSlide: 0,
+    slidesToShow: 4,
     swipeToSlide: true,
     adaptiveHeight: true,
     autoplay: true,
@@ -55,9 +54,9 @@ export default function SimpleThreeColumns() {
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 1,
         },
       },
       {
@@ -65,6 +64,10 @@ export default function SimpleThreeColumns() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+           dots: true, 
+           arrow: false,
+           centerMode: true,
+
         },
       },
     ],
@@ -72,16 +75,17 @@ export default function SimpleThreeColumns() {
   
     return ( 
 
-      <Box alignSelf={"center"} bg={"black"} w="100%" justifyContent="center" alignItems={"center"}   >
+      <Box display="flex" justifyContent="center" alignItems="center" >
+  <Box alignSelf="center" width="100%" maxWidth={{base:"full", lg:"70vw"}} justifyContent="space-between" pl={8}>
         <NavigationTag name="Game on Sale" url="#" />
         {/* <Flex width="70vw">
         <Button>Game on Sale</Button></Flex> */}
-        <Flex justify={'center'} py={4}>
+       
           <Slider {...settings} >
                 <Product/><Product/><Product/><Product/><Product/><Product/><Product/>
               </Slider>
-              </Flex>
-      </Box>
+         
+              </Box></Box>
     );
   }    
   
