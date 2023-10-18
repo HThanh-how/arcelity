@@ -16,6 +16,9 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect, SetStateAction } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const images = [
   "https://picsum.photos/id/92/4000/4000.jpg",
@@ -105,6 +108,22 @@ const ImageCarousel = () => {
   const handleImageClick = (index: SetStateAction<number>) => {
     setCurrentImageIndex(index);
   };
+
+
+  var settings = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows: false,
+    dots: true,
+    swipeToSlide: true,
+    adaptiveHeight: true,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 3000}
 
   return (
     <>
@@ -249,9 +268,11 @@ const ImageCarousel = () => {
       </Box>
 
       {/* Mobile Responsive */}
-      <Box>
-      
-        <AspectRatio m={4} ratio={3 / 4} display={{ base: "flex", lg: "none" }}>
+      <Box  display={{ base: "block", lg: "none" }}p={4}>
+      <Slider {...settings}>
+      {images.map((image, index) => (
+     
+        <AspectRatio m={4} ratio={3 / 4} >
   
           <Box position="relative">
           <Tooltip
@@ -286,7 +307,7 @@ const ImageCarousel = () => {
             <Image
               ml={0}
               boxSize={{ base: "100%", md: "100%", lg: "100%" }}
-              src={images[currentImageIndex].imgUrl}
+              src={image.imgUrl}
               alt="Grand Theft Auto VI"
               objectFit="cover"
               rounded={10}
@@ -329,13 +350,13 @@ const ImageCarousel = () => {
                   fontWeight={"800"}
                   textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}
                 >
-                  {images[currentImageIndex].name}
+                  {image.name}
                 </Text>
                 <Text fontSize="xs" m={2} color="gray.200" textAlign="left">
                   AVAILABLE NOW
                 </Text>
                 <Text fontSize="sm" m={2} textAlign="left">
-                  {images[currentImageIndex].description}
+                  {image.description}
                 </Text>
                 <Text fontSize="lg" m={2} color="gray.200" textAlign="left">
                   Only $19.99
@@ -373,6 +394,8 @@ const ImageCarousel = () => {
             </Box>
           </Box>
         </AspectRatio>
+        ))}
+        </Slider>
       </Box>
     </>
   );
