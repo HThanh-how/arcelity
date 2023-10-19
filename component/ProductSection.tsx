@@ -43,7 +43,7 @@ export default function SimpleThreeColumns() {
         },
       },
       {
-        breakpoint: 1280,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -54,7 +54,7 @@ export default function SimpleThreeColumns() {
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1,
         },
