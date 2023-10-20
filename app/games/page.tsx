@@ -5,7 +5,7 @@ import GameList from "./_components/GameList";
 
 export default function AllGamePage() {
   return (
-    <Container p={0} maxW={"75%"} my={10}>
+    <Container p={0} maxW={{ base: "90%", lg: "75%" }} my={10}>
       <Flex>
         <GameList />
         <FilterBar />
