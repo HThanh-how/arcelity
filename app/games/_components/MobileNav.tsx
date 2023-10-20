@@ -43,6 +43,7 @@ const MobileNav = ({ ...rest }) => {
           _hover={{ textColor: "white" }}
           p={0}
           transition={"all .3s ease"}
+          textColor={"white"}
         >
           Filters
         </Button>

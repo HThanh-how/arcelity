@@ -15,7 +15,7 @@ import {
 export default function ItemDropdown() {
   return (
     <Accordion defaultIndex={[0]} allowMultiple>
-      <AccordionItem>
+      <AccordionItem py={2}>
         <h2>
           <AccordionButton>
             <Box
@@ -24,6 +24,8 @@ export default function ItemDropdown() {
               textAlign="left"
               textColor="whiteAlpha.600"
               _hover={{ textColor: "white" }}
+              textTransform={"uppercase"}
+              fontSize={"sm"}
             >
               Genre
             </Box>
@@ -66,7 +68,7 @@ export default function ItemDropdown() {
         </AccordionPanel>
       </AccordionItem>
 
-      <AccordionItem>
+      <AccordionItem py={2}>
         <h2>
           <AccordionButton>
             <Box
@@ -75,6 +77,8 @@ export default function ItemDropdown() {
               textAlign="left"
               textColor="whiteAlpha.600"
               _hover={{ textColor: "white" }}
+              textTransform={"uppercase"}
+              fontSize={"sm"}
             >
               Genre
             </Box>
@@ -117,7 +121,7 @@ export default function ItemDropdown() {
         </AccordionPanel>
       </AccordionItem>
 
-      <AccordionItem>
+      <AccordionItem py={2}>
         <h2>
           <AccordionButton>
             <Box
@@ -126,6 +130,8 @@ export default function ItemDropdown() {
               textAlign="left"
               textColor="whiteAlpha.600"
               _hover={{ textColor: "white" }}
+              textTransform={"uppercase"}
+              fontSize={"sm"}
             >
               Genre
             </Box>
@@ -168,7 +174,7 @@ export default function ItemDropdown() {
         </AccordionPanel>
       </AccordionItem>
 
-      <AccordionItem>
+      <AccordionItem py={2}>
         <h2>
           <AccordionButton>
             <Box
@@ -177,6 +183,8 @@ export default function ItemDropdown() {
               textAlign="left"
               textColor="whiteAlpha.600"
               _hover={{ textColor: "white" }}
+              textTransform={"uppercase"}
+              fontSize={"sm"}
             >
               Genre
             </Box>
