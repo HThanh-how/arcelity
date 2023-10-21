@@ -1,7 +1,6 @@
 import {
   Card,
   CardHeader,
-  Container,
   Divider,
   GridItem,
   List,
@@ -9,8 +8,14 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import useGameSysReqGetIdApi from "../_api/useGameSysReqGetApi";
 
-export default function SysReq() {
+interface IGameSysReq {
+  id: string;
+}
+
+export default function SysReq({ id }: IGameSysReq) {
+  const [{ data, isLoading, isError }] = useGameSysReqGetIdApi(id);
   return (
     <Card p={10} w={"full"} bg={"whiteAlpha.300"} textColor={"white"}>
       <CardHeader w={"full"} p={0} justifyContent={"left"}>
@@ -23,21 +28,19 @@ export default function SysReq() {
             <ListItem textColor={"whiteAlpha.500"}>Minimum</ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows OS</Text>
-              <Text>Windows 10 64-bit</Text>
+              <Text>{data[0].os}</Text>
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Processor</Text>
-              <Text>
-                Intel Core i5-6600K @ 3.50GHz or AMD Ryzen 5 1600 @ 3.2 GHZ
-              </Text>
+              <Text>{data[0].cpu}</Text>
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Memory</Text>
-              <Text>8 GB</Text>
+              <Text>{data[0].ram}</Text>
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Storage</Text>
-              <Text>100 GB</Text>
+              <Text>{data[0].minStorage}</Text>
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Direct X</Text>

@@ -3,15 +3,26 @@ import { useEffect, useState } from "react";
 
 interface IGame {
   gameId: string;
-  gameName: string;
-  description: string;
-  releaseDate: string;
+  reqType: string;
+  ram: string;
+  os: string;
+  gpu: string;
+  cpu: string;
+  minStorage: string;
 }
 
-const useGameGetIdApi = (gameID: string) => {
-  const url = "https://game-be-crud.vercel.app/game/get/game" + gameID;
+const useGameSysReqGetIdApi = (gameID: string) => {
+  const url = "https://game-be-crud.vercel.app/game_sys_req/get/game" + gameID;
   const [data, setData] = useState<IGame[]>([
-    { gameId: "", gameName: "", description: "", releaseDate: "" },
+    {
+      gameId: "",
+      reqType: "",
+      ram: "",
+      os: "",
+      gpu: "",
+      cpu: "",
+      minStorage: "",
+    },
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -37,4 +48,4 @@ const useGameGetIdApi = (gameID: string) => {
   return [{ data, isLoading, isError }];
 };
 
-export default useGameGetIdApi;
+export default useGameSysReqGetIdApi;

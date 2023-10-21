@@ -5,10 +5,10 @@ import React, { use } from "react";
 import GameImages from "./_components/GameImages";
 import BuyGame from "./_components/BuyGame";
 import GameDescription from "./_components/GameDescription";
-import useGameIdApi from "./_api/useGameIdApi";
+import useGameGetIdApi from "./_api/useGameIdApi";
 
 export default function GamePage({ params }: { params: { id: string } }) {
-  const [{ data, isLoading, isError }] = useGameIdApi(params.id);
+  const [{ data, isLoading, isError }] = useGameGetIdApi(params.id);
   return (
     <Container p={0} maxW={"75%"} my={10}>
       {isError && <div>Something went wrong ...</div>}
@@ -25,7 +25,10 @@ export default function GamePage({ params }: { params: { id: string } }) {
               <BuyGame />
             </GridItem>
             <GridItem colSpan={3}>
-              <GameDescription description={data[0].description} />
+              <GameDescription
+                description={data[0].description}
+                paramId={params.id}
+              />
             </GridItem>
           </SimpleGrid>
         </>
