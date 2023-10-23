@@ -1,33 +1,32 @@
 "use client";
 
 import {
+  Box,
   Button,
   Drawer,
   DrawerContent,
   Flex,
-  FlexProps,
-  IconButton,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { FiMenu } from "react-icons/fi";
 import SidebarContent from "./SidebarContent";
 
 const MobileNav = ({ ...rest }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <>
+    <Box>
       <Drawer
         isOpen={isOpen}
         placement="left"
         onClose={onClose}
-        returnFocusOnClose={false}
+        returnFocusOnClose={true}
         onOverlayClick={onClose}
-        size="full"
       >
-        <DrawerContent>
-          <SidebarContent onClose={onClose} />
+        <DrawerContent bg={"green"} maxW={0}>
+          <SidebarContent
+            onClose={onClose}
+            display={{ base: "block", lg: "none" }}
+          />
         </DrawerContent>
       </Drawer>
       <Flex
@@ -48,7 +47,7 @@ const MobileNav = ({ ...rest }) => {
           Filters
         </Button>
       </Flex>
-    </>
+    </Box>
   );
 };
 

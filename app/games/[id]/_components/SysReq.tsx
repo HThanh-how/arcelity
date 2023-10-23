@@ -36,11 +36,11 @@ export default function SysReq({ id }: IGameSysReq) {
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Memory</Text>
-              <Text>{data[0].ram}</Text>
+              <Text>{data[0].ram} GB</Text>
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Storage</Text>
-              <Text>{data[0].minStorage}</Text>
+              <Text>{data[0].minStorage} GB</Text>
             </ListItem>
             <ListItem>
               <Text textColor={"whiteAlpha.500"}>Windows Direct X</Text>

@@ -7,7 +7,7 @@ interface SidebarProps extends BoxProps {
 }
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
-    <Box bg={"black"} w={{ base: "full", lg: 60 }} h="full" {...rest}>
+    <Box bg={"black"} w={60} h="full" {...rest} m={0}>
       <Flex h="fit-content" alignItems="center" justifyContent="space-between">
         <Text fontSize="md">Filters</Text>
         <CloseButton display={{ base: "flex", lg: "none" }} onClick={onClose} />

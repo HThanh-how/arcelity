@@ -6,6 +6,7 @@ import GameImages from "./_components/GameImages";
 import BuyGame from "./_components/BuyGame";
 import GameDescription from "./_components/GameDescription";
 import useGameGetIdApi from "./_api/useGameIdApi";
+import CommentSection from "./_components/CommentSection";
 
 export default function GamePage({ params }: { params: { id: string } }) {
   const [{ data, isLoading, isError }] = useGameGetIdApi(params.id);
@@ -29,6 +30,7 @@ export default function GamePage({ params }: { params: { id: string } }) {
                 description={data[0].description}
                 paramId={params.id}
               />
+              <CommentSection />
             </GridItem>
           </SimpleGrid>
         </>
