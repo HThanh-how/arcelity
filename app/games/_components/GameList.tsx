@@ -1,7 +1,8 @@
-import { Box, Container, Flex, Spacer, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Spacer, Text } from "@chakra-ui/react";
 import React from "react";
 import MobileNav from "./MobileNav";
 import ShowMenu from "./ShowMenu";
+import ProductAddToCart from "@/component/ProductCard";
 
 export default function GameList() {
   return (
@@ -14,6 +15,13 @@ export default function GameList() {
         <MobileNav display={{ base: "block", lg: "none" }} />
       </Flex>
 
+      <SimpleGrid columns={{ base: 2, lg: 4 }} spacing={5}>
+        <ProductAddToCart />
+        <ProductAddToCart />
+        <ProductAddToCart />
+        <ProductAddToCart />
+        <ProductAddToCart />
+      </SimpleGrid>
       {/*content*/}
     </Box>
   );

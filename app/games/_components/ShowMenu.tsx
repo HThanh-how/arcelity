@@ -12,17 +12,17 @@ const ShowMenu = () => {
         rightIcon={<ChevronDownIcon />}
         h={"fit-content"}
         pt={1}
-        bg={"none"}
+        bg={"black"}
         textColor={"white"}
       >
         All
       </MenuButton>
       <MenuList bg={"whiteAlpha.200"}>
-        <MenuItem bg={"none"}>New Release</MenuItem>
-        <MenuItem bg={"none"}>Coming Soon</MenuItem>
-        <MenuItem bg={"none"}>Alphabetical</MenuItem>
-        <MenuItem bg={"none"}>Price: High to Low</MenuItem>
-        <MenuItem bg={"none"}>Price: Low to High</MenuItem>
+        <MenuItem bg={"black"}>New Release</MenuItem>
+        <MenuItem bg={"black"}>Coming Soon</MenuItem>
+        <MenuItem bg={"black"}>Alphabetical</MenuItem>
+        <MenuItem bg={"black"}>Price: High to Low</MenuItem>
+        <MenuItem bg={"black"}>Price: Low to High</MenuItem>
       </MenuList>
     </Menu>
   );
