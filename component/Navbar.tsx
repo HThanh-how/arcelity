@@ -64,9 +64,42 @@ export default function Simple() {
           <HStack spacing={8} alignItems={'center'}>
             <Box onClick={()=>router.push("/")} cursor={"pointer"}>Arcelity</Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+            <Box
+     px={2}
+      py={1} 
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: useColorModeValue('gray.800', 'gray.700'),
+      }}
+      onClick={()=>router.push("/card")} cursor={"pointer"}
+      >
+      CARD
+    </Box>
+    <Box
+     px={2}
+      py={1} 
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: useColorModeValue('gray.800', 'gray.700'),
+      }}
+      onClick={()=>router.push("/wishlist")} cursor={"pointer"}
+      >
+      WISHLIST
+    </Box>
+    <Box
+     px={2}
+      py={1} 
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: useColorModeValue('gray.800', 'gray.700'),
+      }}
+      onClick={()=>router.push("/games")} cursor={"pointer"}
+      >
+      GAMES
+    </Box>
             </HStack>
           </HStack>
           <Flex alignItems={'center'} color="#171717">
