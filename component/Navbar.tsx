@@ -18,6 +18,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   children: React.ReactNode
@@ -26,6 +27,7 @@ interface Props {
 const Links = ['STORE', 'SUPPORT', 'CONTACT']
 
 const NavLink = (props: Props) => {
+  const router=useRouter()
   const { children } = props
 
   return (
@@ -37,6 +39,7 @@ const NavLink = (props: Props) => {
         textDecoration: 'none',
         bg: useColorModeValue('gray.800', 'gray.700'),
       }}
+      onClick={()=>router.push("/")} cursor={"pointer"}
       >
       {children}
     </Box>
@@ -44,6 +47,7 @@ const NavLink = (props: Props) => {
 }
 
 export default function Simple() {
+  const router=useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -58,7 +62,7 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Arcelity</Box>
+            <Box onClick={()=>router.push("/")} cursor={"pointer"}>Arcelity</Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
@@ -80,13 +84,13 @@ export default function Simple() {
                   }
                 />
               </MenuButton>
-              <MenuList>
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>Order</MenuItem>
-                <MenuItem>Wishlist</MenuItem>
-                <MenuItem>Payment</MenuItem>
+              <MenuList >
+                <MenuItem onClick={()=>router.push("/user")}>Profile</MenuItem>
+                <MenuItem onClick={()=>router.push("/user")}>Order</MenuItem>
+                <MenuItem onClick={()=>router.push("/user")}>Wishlist</MenuItem>
+                <MenuItem onClick={()=>router.push("/user")}>Payment</MenuItem>
                 <MenuDivider />
-                <MenuItem>Log out</MenuItem>
+                <MenuItem onClick={()=>router.push("/login")}>Log out</MenuItem>
               </MenuList>
             </Menu>
           </Flex>

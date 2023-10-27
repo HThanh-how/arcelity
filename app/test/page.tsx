@@ -1,3 +1,4 @@
+"use client"
 import {
     Box,
     Image,
@@ -20,7 +21,6 @@ import {
   import "slick-carousel/slick/slick-theme.css";
   import Slider from "react-slick";
   import axios from "axios";
-  import { useRouter } from "next/navigation";
   
   const images = [
     "https://picsum.photos/id/92/4000/4000.jpg",
@@ -40,7 +40,6 @@ import {
   
   
   const ImageCarousel = () => {
-    const router=useRouter()
     const [gameAPI, setGameAPI] = useState<Game[]>([]);
     const [images, setImages] = useState<Game[]>([]);
   
@@ -165,7 +164,7 @@ import {
                           color="gray.200"
                           textAlign="left"
                         >
-                          Only ${images[currentImageIndex]?.price} 
+                          Only {images[currentImageIndex]?.price} $
                         </Text>
                         {/* <Text fontSize="lg">Alt: Grand Theft Auto VI cover image</Text> */}
                         <Flex>
@@ -178,7 +177,6 @@ import {
                             size="xl"
                             width={200}
                             textColor={"black"}
-                            onClick={()=>router.push('games/' + images[currentImageIndex]?.gameId)}
                           >
                             GET NOW
                           </Button>
@@ -271,7 +269,7 @@ import {
                     alignSelf={"right"}
                     color="white"
                     m={-1}
-                    bg={"black"}          
+                    bg={"black"}
                     rounded={"full"}
                     position="absolute"
                   />
@@ -332,7 +330,7 @@ import {
                     {image.description}
                   </Text>
                   <Text fontSize="lg" m={2} color="gray.200" textAlign="left">
-                  Only ${images[currentImageIndex]?.price} 
+                    Only $19.99
                   </Text>
   
                   <Flex>
@@ -346,7 +344,6 @@ import {
                       width={200}
                       h="40px"
                       textColor={"black"}
-                      onClick={()=>router.push('games/' + images[currentImageIndex]?.gameId)}
                     >
                       GET NOW
                     </Button>
