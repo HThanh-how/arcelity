@@ -5,6 +5,8 @@ import { useState } from 'react';
 const SearchBar = () => {
   const { isOpen, onToggle } = useDisclosure()
   const [search, openSearch] = useState(false)
+  const [searchContent, setSearchContent] =  useState("")
+
   return (
     <><Flex bg="black" alignItems={"center"} justifyContent={"center"} textColor={"white"} pt="6" pb="2" display={{ base: "none", md: "flex" }}>
 
@@ -17,6 +19,7 @@ const SearchBar = () => {
           bg={useColorModeValue('#171717', 'gray.600')}
           rounded={'full'}
           border={0}
+          value={searchContent} onChange={(event) => setSearchContent(event.target.value)}
           _focus={{
             bg: useColorModeValue('gray.800', 'gray.200'),
             outline: 'gray.200',

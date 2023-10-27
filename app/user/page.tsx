@@ -1,5 +1,3 @@
-"user client";
-
 import React from "react";
 import Avatar from "./_components/UserAvatar";
 import { Container } from "@chakra-ui/react";
