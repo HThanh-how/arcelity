@@ -1,3 +1,4 @@
+"use client";
 import { Container, Flex, Spacer } from "@chakra-ui/react";
 import React from "react";
 import FilterBar from "./_components/FilterBar";
