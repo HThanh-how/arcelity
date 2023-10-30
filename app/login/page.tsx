@@ -26,22 +26,26 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async () => {
-    
-    try {
-      const response = await axios.post("https://game-be-v2.vercel.app/auth/login", {
-        username,
-        password,
-      });
-    
-      const { access_token, id } = response.data;
-      
-      localStorage.setItem("access_token", access_token);
-      router.push("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+const handleLogin = async () => {
+  try {
+    const response = await axios.post("https://game-be-v2.vercel.app/auth/login", {
+      username,
+      password,
+    }, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const { access_token, id } = response.data;
+
+    localStorage.setItem("access_token", access_token);
+    router.push("/");
+  } catch (error) {
+    console.error(error);
+  }
+};
+
   return (
     <Box position={"relative"} bg="black">
       <Container
