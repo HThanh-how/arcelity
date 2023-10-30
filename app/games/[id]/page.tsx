@@ -17,18 +17,24 @@ export default function GamePage({ params }: { params: { id: string } }) {
         <div>Loading ...</div>
       ) : (
         <>
-          <Heading mb={5}>{data[0].gameName}</Heading>
+          <Heading mb={5}>{data.name}</Heading>
           <SimpleGrid columns={{ sm: 1, md: 1, lg: 4 }} spacing={0}>
             <GridItem colSpan={3}>
               <GameImages />
             </GridItem>
             <GridItem colSpan={1}>
-              <BuyGame />
+              <BuyGame
+                price={data.price}
+                releaseDate={data.releaseDate}
+                developer={data.developer}
+                genres={data.genres}
+                saleDetails={data.saleDetails}
+              />
             </GridItem>
             <GridItem colSpan={3}>
               <GameDescription
-                description={data[0].description}
-                paramId={params.id}
+                description={data.description}
+                systemRequirements={data.systemRequirements}
               />
               <CommentSection />
             </GridItem>
