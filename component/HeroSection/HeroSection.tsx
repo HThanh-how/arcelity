@@ -30,12 +30,17 @@ import {
   
   
   interface Game {
-    gameId: string;
-    gameName: string;
+    id: number;
+    name: string;
     description: string;
     releaseDate: string;
     price: number;
-    devId: string;
+    genres: Genre[];
+  }
+  
+  interface Genre {
+    id: number;
+    name: string;
   }
   
   
@@ -63,7 +68,7 @@ import {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const toast = useToast();
     
-    console.log(images[3]?.gameName)
+    // console.log(images[3]?.game)
   
     const handleAutoSlide = () => {
       const nextIndex = (currentImageIndex + 1) % images.length;
@@ -146,7 +151,7 @@ import {
                           fontWeight={"800"}
                           textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}
                         >
-                          {images[currentImageIndex]?.gameName}
+                          {images[currentImageIndex]?.name}
                         </Text>
                         <Text
                           fontSize="sm"
@@ -178,7 +183,7 @@ import {
                             size="xl"
                             width={200}
                             textColor={"black"}
-                            onClick={()=>router.push('games/' + images[currentImageIndex]?.gameId)}
+                            onClick={()=>router.push('games/' + images[currentImageIndex]?.id)}
                           >
                             GET NOW
                           </Button>
@@ -228,7 +233,7 @@ import {
                         p={4}
                         style={{ overflowWrap: "break-word" }}
                       >
-                        {image?.gameName}{" "}
+                        {image?.name}{" "}
                       </Text>
   
                       {/* <Text textColor={"gray.50"}>Intro</Text> */}
@@ -323,7 +328,7 @@ import {
                     fontWeight={"800"}
                     textShadow={"1px 1px 2px rgba(0, 0, 0, 0.5)"}
                   >
-                    {image.gameName}
+                    {image.name}
                   </Text>
                   <Text fontSize="xs" m={2} color="gray.200" textAlign="left">
                     AVAILABLE NOW
@@ -346,7 +351,7 @@ import {
                       width={200}
                       h="40px"
                       textColor={"black"}
-                      onClick={()=>router.push('games/' + images[currentImageIndex]?.gameId)}
+                      onClick={()=>router.push('games/' + images[currentImageIndex]?.id)}
                     >
                       GET NOW
                     </Button>
