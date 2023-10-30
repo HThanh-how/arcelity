@@ -1,14 +1,10 @@
 import { Text, VStack } from "@chakra-ui/react";
 import SysReq from "./SysReq";
-
-interface IGameDescription {
-  paramId: string;
-  description: string;
-}
+import { IGameDescription } from "../_interface/IGameDescription";
 
 export default function GameDescription({
   description,
-  paramId,
+  systemRequirements,
 }: IGameDescription) {
   return (
     <VStack spacing={4} w={"full"}>
@@ -16,7 +12,7 @@ export default function GameDescription({
       <Text justifyContent={"left"} w={"full"} fontWeight={"bold"}>
         System requirement
       </Text>
-      <SysReq id={paramId} />
+      <SysReq systemRequirements={systemRequirements} />
     </VStack>
   );
 }

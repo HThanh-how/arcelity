@@ -9,10 +9,18 @@ import {
   Flex,
   Spacer,
   Divider,
+  Badge,
 } from "@chakra-ui/react";
 import React from "react";
+import { IGameBuyDetail } from "../_interface/IGameBuyDetail";
 
-export default function BuyGame() {
+export default function BuyGame({
+  price,
+  releaseDate,
+  developer,
+  genres,
+  saleDetails,
+}: IGameBuyDetail) {
   return (
     <Container p={0} ml={{ lg: 10 }}>
       <Card border={"none"} bg={"none"} textColor={"white"}>
@@ -25,7 +33,33 @@ export default function BuyGame() {
           ></Image>
         </Center>
         {/* Price */}
-        <Text mb={2}>455.00d</Text>
+
+        <Flex>
+          {saleDetails && (
+            <>
+              <Badge
+                textColor={"white"}
+                borderRadius={5}
+                bg={"red"}
+                mr={3}
+                h={"fit-content"}
+                py={1}
+                px={3}
+              >
+                {saleDetails[0].discountRate} %
+              </Badge>
+              <Text mr={3} as={"s"} mb={2} textColor={"whiteAlpha.600"}>
+                {price} USD
+              </Text>
+            </>
+          )}
+          {saleDetails && (
+            <Text>
+              {price - (price * saleDetails[0].discountRate) / 100} USD
+            </Text>
+          )}
+          {!saleDetails && <Text>{price} USD</Text>}
+        </Flex>
 
         {/* Buttons */}
         <VStack gap={3}>
@@ -63,25 +97,25 @@ export default function BuyGame() {
           <Flex w={"full"}>
             <Text color={"whiteAlpha.600"}>Developer</Text>
             <Spacer />
-            <Text> lmao</Text>
+            <Text> {developer.name}</Text>
           </Flex>
           <Divider />
           <Flex w={"full"}>
             <Text color={"whiteAlpha.600"}>Publisher</Text>
             <Spacer />
-            <Text> lmao</Text>
+            <Text> {developer.name}</Text>
           </Flex>
           <Divider />
           <Flex w={"full"}>
             <Text color={"whiteAlpha.600"}>Release Date</Text>
             <Spacer />
-            <Text> lmao</Text>
+            <Text> {releaseDate}</Text>
           </Flex>
           <Divider />
           <Flex w={"full"}>
             <Text color={"whiteAlpha.600"}>Platform</Text>
             <Spacer />
-            <Text> lmao</Text>
+            <Text> N/A</Text>
           </Flex>
         </VStack>
       </Card>
