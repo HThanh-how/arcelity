@@ -19,7 +19,8 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/navigation'
-import { isLogin } from '@/app/login/page'
+import { useState } from 'react'
+
 
 interface Props {
   children: React.ReactNode
@@ -28,6 +29,7 @@ interface Props {
 const Links = ['STORE', 'SUPPORT', 'CONTACT']
 
 const NavLink = (props: Props) => {
+
   const router=useRouter()
   const { children } = props
 
@@ -48,6 +50,7 @@ const NavLink = (props: Props) => {
 }
 
 export default function Simple() {
+  const [isLogin, setIsLogin]=useState(true)
   const router=useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
 

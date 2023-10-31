@@ -21,7 +21,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export let isLogin =false;
+
 
 export default function Login() {
   const router = useRouter();
@@ -30,7 +30,7 @@ export default function Login() {
 
 
 const handleLogin = async () => {
-  isLogin=true;
+
   try {
     const response = await axios.post("https://game-be-v2.vercel.app/auth/login", {
       username,
