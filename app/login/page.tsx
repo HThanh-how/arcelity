@@ -20,6 +20,7 @@ import axios from "axios";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useToast } from '@chakra-ui/react'
 
 
 
@@ -27,7 +28,7 @@ export default function Login() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const toast = useToast()
 
 const handleLogin = async () => {
 
@@ -47,12 +48,13 @@ const handleLogin = async () => {
 
     localStorage.setItem("access_token", access_token);
     router.push("/");
-  } catch (error:any) {
-    if (error.status === 401) {
-      console.error("Sai tên đăng nhập hoặc mật khẩu");
-  } else {
-      console.error(error);
-  }
+  } catch (error) {
+    toast({
+      title: `Username or Password incorrect`,
+      status: 'error',
+      position: "top-right",
+      isClosable: true,
+    })
   }
 };
 
