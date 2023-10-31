@@ -50,7 +50,6 @@ const NavLink = (props: Props) => {
 };
 
 export default function NavBar() {
-  
   const [lastTimeAccess, setLastTimeAccess] = useState("2020");
 
   const [isLogin, setIsLogin] = useState(false);
@@ -61,17 +60,14 @@ export default function NavBar() {
   const createdAt = new Date().toISOString();
   console.log(isLogin);
 
-
-
   useEffect(() => {
     const lastAccess = localStorage.getItem("createdAt");
     if (lastAccess === null) {
       setIsLogin(false);
-    }
-    else setLastTimeAccess(lastAccess)
+    } else setLastTimeAccess(lastAccess);
   }, []);
   useEffect(() => {
-     if (Date.now() - new Date(lastTimeAccess).getTime() > 1800000) {
+    if (Date.now() - new Date(lastTimeAccess).getTime() > 1800000) {
       setIsLogin(false);
     } else {
       setIsLogin(true);
@@ -110,6 +106,12 @@ export default function NavBar() {
       clearInterval(intervalId);
     };
   }, [isLogin]);
+
+  useEffect(() => {
+    if (pathname === "/login" && isLogin) {
+      router.replace("/");
+    }
+  }, [pathname, isLogin]);
 
   function handleLogout(): void {
     localStorage.removeItem("access_token");
