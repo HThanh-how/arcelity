@@ -51,7 +51,7 @@ const NavLink = (props: Props) => {
 
 export default function NavBar() {
   
-  const [lastTimeAccess, setLastTimeAccess] = useState("");
+  const [lastTimeAccess, setLastTimeAccess] = useState("2020");
 
   const [isLogin, setIsLogin] = useState(false);
   const router = useRouter();
