@@ -45,9 +45,12 @@ const handleLogin = async () => {
     );
 
     const { access_token, id } = response.data;
-
     localStorage.setItem("access_token", access_token);
+    console.log(access_token);
+    const createdAt = new Date().toISOString();
+    document.cookie = `access_token=${access_token}; expires=Thu, 01 Jan 2022 00:00:00 UTC; path=/`;
     router.push("/");
+    
   } catch (error) {
     toast({
       title: `Username or Password incorrect`,
