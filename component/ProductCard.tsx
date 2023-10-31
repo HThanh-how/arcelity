@@ -25,16 +25,14 @@ const data = {
   isNew: true,
   imageURL:
     "https://www.apple.com/newsroom/images/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/article/Apple-iPhone-15-Pro-lineup-hero-230912_Full-Bleed-Image.jpg.large.jpg",
-  name: "Iphone 15 Pro",
+  name: "Iphone 15 Pro Max",
   price: 4.5,
   rating: 4.2,
   numReviews: 34,
-  imageAlt:"This is game",
+  imageAlt: "This is game",
   discount: "20%",
   initialPrice: 29990000,
-  oldPrice: 39000000
-
-
+  oldPrice: 39000000,
 };
 
 interface RatingProps {
@@ -81,9 +79,13 @@ function ProductAddToCart() {
     setShowIcon(false);
   };
   return (
-    <Flex w={{base:"200px", md:"15vw"}} alignItems="center" justifyContent="center">
+    <Flex
+      w={{ base: "200px", md: "220px" }}
+      alignItems="center"
+      justifyContent="center"
+    >
       <Box
-        bg={useColorModeValue("white", "gray.800")}
+        bg={"red"}
         // maxW="xs"
         // borderWidth="1px"
         rounded="lg"
@@ -98,7 +100,13 @@ function ProductAddToCart() {
         )} */}
 
         {showIcon && (
-          <Tooltip hasArrow label="Add to wishlist" bg="black" placement={"top"} transition={"all 0.3s"}>
+          <Tooltip
+            hasArrow
+            label="Add to wishlist"
+            bg="black"
+            placement={"top"}
+            transition={"all 0.3s"}
+          >
             <Button
               bg={"transparent"}
               _hover={{ bg: "transperent" }}
@@ -130,7 +138,12 @@ function ProductAddToCart() {
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             {data.isNew && (
-              <Badge rounded="full" px="2" fontSize={{base: "0.6em", md:"0.8em"}} colorScheme="green">
+              <Badge
+                rounded="full"
+                px="2"
+                fontSize={{ base: "0.6em", md: "0.8em" }}
+                colorScheme="green"
+              >
                 BASE GAME
               </Badge>
             )}
@@ -138,7 +151,7 @@ function ProductAddToCart() {
 
           <Flex mt="1" justifyContent="space-between" alignContent="center">
             <Box
-              fontSize={{base: "xl", md:"2xl"}}
+              fontSize={{ base: "xl", md: "2xl" }}
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
@@ -151,24 +164,34 @@ function ProductAddToCart() {
             {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
           </Flex>
 
-          <Flex justifyContent="space-between" alignContent="center" >
-          <Box fontSize={{base: "sm", md:"xl"}} color={"red.400"} pt={{base:0, md:5}}>
-              <Icon as={TriangleDownIcon} h={8}/> {data.discount} 
-              </Box>
+          <Flex justifyContent="space-between" alignContent="center">
+            <Box
+              fontSize={{ base: "sm", md: "xl" }}
+              color={"red.400"}
+              pt={{ base: 0, md: 5 }}
+            >
+              <Icon as={TriangleDownIcon} h={8} /> {data.discount}
+            </Box>
             <VStack>
-            {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
-            <Box fontSize={{base: "sm", md:"xl"}} color={useColorModeValue("gray.400", "white")}  style={{ textDecoration: 'line-through' }}>
-              <Box as="span" color={"gray.400"} fontSize="lg">
-                đ {data.oldPrice.toLocaleString('vi-VN')}
+              {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
+              <Box
+                fontSize={{ base: "sm", md: "xl" }}
+                color={useColorModeValue("gray.400", "white")}
+                style={{ textDecoration: "line-through" }}
+              >
+                <Box as="span" color={"gray.400"} fontSize="lg">
+                  đ {data.oldPrice.toLocaleString("vi-VN")}
+                </Box>
               </Box>
-              
-            </Box>
-            <Box fontSize={{base: "xl", md:"2xl"}} color={useColorModeValue("gray.800", "white")}>
-              <Box as="span" color={"gray.600"} fontSize="lg">
-                đ
+              <Box
+                fontSize={{ base: "xl", md: "2xl" }}
+                color={useColorModeValue("gray.800", "white")}
+              >
+                <Box as="span" color={"gray.600"} fontSize="lg">
+                  đ
+                </Box>
+                {data.initialPrice.toLocaleString("vi-VN")}
               </Box>
-              {data.initialPrice.toLocaleString('vi-VN')}
-            </Box>
             </VStack>
           </Flex>
         </Box>
