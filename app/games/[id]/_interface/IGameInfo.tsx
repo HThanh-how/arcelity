@@ -18,8 +18,9 @@ export interface IGameInfo {
     ratingStar: number;
     comment: string;
     ratingDateTIme: string;
-    userId: number;
-    gameId: number;
+    user: {
+      username: string;
+    };
   }[];
   systemRequirements: {
     gameId: number;
