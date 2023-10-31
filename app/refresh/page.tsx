@@ -21,20 +21,19 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export let isLogin =false;
+
 
 export default function Login() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const id=3;
+  
 
 const handleLogin = async () => {
-  isLogin=true;
   try {
-    const response = await axios.post("https://game-be-v2.vercel.app/auth/login", {
-      username,
-      password,
+    const response = await axios.post("https://game-be-v2.vercel.app/billings/allBilling", {
+      id: 3,
     }
     , {
       headers: {
@@ -47,12 +46,8 @@ const handleLogin = async () => {
 
     localStorage.setItem("access_token", access_token);
     router.push("/");
-  } catch (error:any) {
-    if (error.status === 401) {
-      console.error("Sai tên đăng nhập hoặc mật khẩu");
-  } else {
-      console.error(error);
-  }
+  } catch (error) {
+    console.error(error);
   }
 };
 

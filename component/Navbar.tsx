@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/navigation'
+import { isLogin } from '@/app/login/page'
 
 interface Props {
   children: React.ReactNode
@@ -102,8 +103,10 @@ export default function Simple() {
     </Box>
             </HStack>
           </HStack>
+
+
           <Flex alignItems={'center'} color="#171717">
-            <Menu >
+          {isLogin && <Menu>
               <MenuButton
                 as={Button}
                 rounded={'full'}
@@ -125,7 +128,7 @@ export default function Simple() {
                 <MenuDivider />
                 <MenuItem onClick={()=>router.push("/login")}>Log out</MenuItem>
               </MenuList>
-            </Menu>
+            </Menu>}
           </Flex>
         </Flex>
 
