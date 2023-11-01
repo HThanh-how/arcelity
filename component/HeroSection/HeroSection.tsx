@@ -84,6 +84,9 @@ import {
     const handleImageClick = (index: SetStateAction<number>) => {
       setCurrentImageIndex(index);
     };
+    useEffect(() => {
+      localStorage.setItem("historyPathname", "/");
+    }, []);
   
   
     var settings = {

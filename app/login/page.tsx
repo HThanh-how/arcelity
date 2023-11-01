@@ -32,6 +32,8 @@ export default function Login() {
 
 const handleLogin = async () => {
 
+  
+
   try {
     const response = await axios.post("https://game-be-v2.vercel.app/auth/login", {
       username,
@@ -45,12 +47,13 @@ const handleLogin = async () => {
     );
     const { access_token,  id} = response.data;
     localStorage.setItem("access_token", access_token);
-    console.log(access_token);
+    const historyPathname = localStorage.getItem("historyPathname");
     localStorage.setItem("id_token", id);
     const createdAt = new Date().toISOString();
     localStorage.setItem('createdAt', createdAt);
     document.cookie = `access_token=${access_token}; expires=Thu, 01 Jan 2022 00:00:00 UTC; path=/`;
-    window.location.href = "/"
+    window.location.href = historyPathname?? '/'
+
   } catch (error) {
     toast({
       title: `Username or Password incorrect`,

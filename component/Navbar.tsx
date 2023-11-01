@@ -19,13 +19,16 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import { usePathname } from "next/navigation";
 
 interface Props {
   children: React.ReactNode;
 }
 
+
+
+export const IsLoginContext = createContext<boolean | null>(null);
 const Links = ["STORE", "SUPPORT", "CONTACT"];
 
 const NavLink = (props: Props) => {
@@ -51,14 +54,14 @@ const NavLink = (props: Props) => {
 
 export default function NavBar() {
   const [lastTimeAccess, setLastTimeAccess] = useState("2020");
-
   const [isLogin, setIsLogin] = useState(false);
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const pathname = usePathname();
-
+  
+  
   const createdAt = new Date().toISOString();
-  console.log(isLogin);
+
 
   useEffect(() => {
     const lastAccess = localStorage.getItem("createdAt");
@@ -120,6 +123,7 @@ export default function NavBar() {
   }
 
   return (
+    <IsLoginContext.Provider value={isLogin}>
     <Box
       bg={useColorModeValue("#171717", "gray.900")}
       px={4}
@@ -233,5 +237,6 @@ export default function NavBar() {
         </Box>
       ) : null}
     </Box>
+    </IsLoginContext.Provider>
   );
 }
