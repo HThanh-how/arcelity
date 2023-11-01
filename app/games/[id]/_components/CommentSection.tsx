@@ -1,22 +1,24 @@
 import { Card, Divider, Text } from "@chakra-ui/react";
 import React from "react";
+import { IGameComment } from "../_interface/IGameComment";
 
-export default function CommentSection() {
+export default function CommentSection({
+  id,
+  ratingStar,
+  comment,
+  ratingDateTIme,
+  user,
+}: IGameComment) {
   return (
     <>
       <Text justifyContent={"left"} w={"full"} fontWeight={"bold"} py={5}>
         Ratings & Reviews
       </Text>
       <Card p={10} w={"full"} bg={"whiteAlpha.300"} textColor={"white"}>
-        <Text>Game Informer</Text>
+        <Text>{user.username}</Text>
         <Divider my={3} textColor={"whiteAlpha.600"} />
-        <Text mb={3}>7.5/10</Text>
-        <Text textColor={"whiteAlpha.600"}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-          adipisci at rem maiores natus a eos, magnam, ad repudiandae inventore
-          aspernatur modi voluptates magni nemo eligendi? Totam maiores
-          accusamus itaque.
-        </Text>
+        <Text mb={3}>{ratingStar}/5</Text>
+        <Text textColor={"whiteAlpha.600"}>{comment}</Text>
       </Card>
     </>
   );

@@ -48,7 +48,16 @@ export default function GamePage({ params }: { params: { id: string } }) {
                 />
               </Skeleton>
               <Skeleton isLoaded={!isLoading}>
-                <CommentSection />
+                {data.ratings.map((rating) => (
+                  <CommentSection
+                    key={rating.id}
+                    id={rating.id}
+                    comment={rating.comment}
+                    ratingStar={rating.ratingStar}
+                    ratingDateTIme={rating.ratingDateTIme}
+                    user={rating.user}
+                  />
+                ))}
               </Skeleton>
             </GridItem>
           </SimpleGrid>

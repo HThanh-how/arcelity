@@ -9,8 +9,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { IGamePurchased } from "../_interface/IGamePurchased";
 
-export default function GameBuy() {
+export default function GameBuy({
+  id,
+  name,
+  description,
+  releaseDate,
+  price,
+  genres,
+}: IGamePurchased) {
   return (
     <Card
       w={"full"}
@@ -29,14 +37,14 @@ export default function GameBuy() {
               borderRadius={5}
             />
             <CardHeader p={0} pl={5} fontSize={20}>
-              Final Fantasy VII Remake
+              {name}
             </CardHeader>
           </Flex>
         </GridItem>
 
         {/* Game price and button area*/}
         <GridItem colSpan={1} mt={{ sm: 5, md: 0 }}>
-          <Text pb={5}>455.00d</Text>
+          <Text pb={5}>${price}</Text>
           <Button
             bg={"none"}
             textColor={"whiteAlpha.600"}
