@@ -150,10 +150,10 @@ export default function NavBar() {
                 textDecoration: "none",
                 bg: useColorModeValue("gray.800", "gray.700"),
               }}
-              onClick={() => router.push("/card")}
+              onClick={() => router.push("/cart")}
               cursor={"pointer"}
             >
-              CARD
+              CART
             </Box>
             <Box
               px={2}
