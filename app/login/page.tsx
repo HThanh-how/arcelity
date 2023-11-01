@@ -169,7 +169,7 @@ const handleLogin = async () => {
               w={"full"}
               onClick={() => router.push("/sign-up")}
             >
-              First time? Sign Up now
+              First time? Register now!
             </Button>
           </Box>
         </Stack>
