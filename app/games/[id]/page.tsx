@@ -18,7 +18,6 @@ export default function GamePage({ params }: { params: { id: string } }) {
   const [{ data, isLoading, isError }] = useGameGetIdApi(params.id);
   return (
     <Container p={0} maxW={"75%"} my={10}>
-      {isError && <div>Something went wrong ...</div>}
       {data != undefined && (
         <>
           <Skeleton isLoaded={!isLoading}>
@@ -49,7 +48,16 @@ export default function GamePage({ params }: { params: { id: string } }) {
                 />
               </Skeleton>
               <Skeleton isLoaded={!isLoading}>
-                <CommentSection />
+                {data.ratings.map((rating) => (
+                  <CommentSection
+                    key={rating.id}
+                    id={rating.id}
+                    comment={rating.comment}
+                    ratingStar={rating.ratingStar}
+                    ratingDateTIme={rating.ratingDateTIme}
+                    user={rating.user}
+                  />
+                ))}
               </Skeleton>
             </GridItem>
           </SimpleGrid>

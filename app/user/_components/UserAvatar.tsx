@@ -9,8 +9,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import useGetUserInfoApi from "../_api/useGetUserInfoApi";
 
 export default function UserAvatar() {
+  const [{ data, isLoading, isError }] = useGetUserInfoApi();
+
   return (
     <Card w={"fit-content"} bg={"none"}>
       <SimpleGrid columns={{ md: 1, lg: 3 }}>
@@ -31,7 +34,7 @@ export default function UserAvatar() {
             ml={{ md: 0, lg: 10 }}
             textColor={"white"}
           >
-            Dan Abrahmov
+            {data?.username}
           </Text>
           <HStack spacing={5} ml={{ md: 0, lg: 10 }}>
             {/* account point */}

@@ -3,5 +3,7 @@ export interface IGameComment {
   ratingStar: number;
   comment: string;
   ratingDateTIme: string;
-  user: string;
+  user: {
+    username: string;
+  };
 }
