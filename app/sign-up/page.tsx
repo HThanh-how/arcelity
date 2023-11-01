@@ -43,7 +43,13 @@ export default function Login() {
   });
 
   const validateUsername = () => {
-    if (!/^[a-z0-9]+$/.test(username)) {
+    
+    if (username.length ==0) {
+      setErrors((errors) => ({
+        ...errors,
+        username: "Vui lòng nhập tên người dùng",
+      }));
+    } else if (!/^[a-z0-9]+$/.test(username)) {
       setErrors((errors) => ({
         ...errors,
         username: "Tên người dùng chỉ chứa chữ thường và số",
@@ -110,7 +116,8 @@ export default function Login() {
   const validateFullName = () => {
     if (!fullName) {
       setErrors((errors) => ({ ...errors, fullName: "Vui lòng nhập tên" }));
-    } else if (!/^[^\p{P}\p{S}]+$/.test(fullName)) {
+    } else if (!/^[^~`!@#$%^&*()_+={}[\]|;:'",.<>?]+$/u
+    .test(fullName)) {
       setErrors((errors) => ({ ...errors, fullName: "Tên không hợp lệ" }));
     } else {
       setErrors((errors) => ({ ...errors, fullName: "" }));
