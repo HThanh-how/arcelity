@@ -21,6 +21,18 @@ export default function BuyGame({
   genres,
   saleDetails,
 }: IGameBuyDetail) {
+
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <Container p={0} ml={{ lg: 10 }}>
       <Card border={"none"} bg={"none"} textColor={"white"}>

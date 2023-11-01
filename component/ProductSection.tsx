@@ -1,5 +1,5 @@
 import Product from "./ProductCard";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import {
   Box,
   SimpleGrid,
@@ -17,11 +17,66 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NavigationTag from "@/component/NavigationTag"
 import Slider from "react-slick";
+import axios from "axios";
+
+
+interface GameSale {
+  id: number;
+  name: string;
+  description: string;
+  releaseDate: string;
+  price: number;
+  saleDetails: SaleDetail[];
+}
+
+interface SaleDetail {
+  saleId: number;
+  gameId: number;
+  discountRate: number;
+  salePromotion: SalePromotion;
+}
+
+interface SalePromotion {
+  id: number;
+  name: string;
+  startDate: string;
+  endDate: string;
+}
+
+
 
 
 export default function SimpleThreeColumns() {
+  const [gameSale, setGameSale] = useState<GameSale[]>([]);
+
+  useEffect(() => {
+        
+        
+    const fetchData = async () => {
+      
+      try {
+        const response = await axios.get('https://game-be-v2.vercel.app/games/gamesOnSale')
+        const gameData: GameSale[] = response.data;
+        setGameSale(gameData);
+      } catch (error) {
+        console.error('Lỗi khi lấy dữ liệu từ API:', error);
+      }
+    };
+    fetchData();
+  }, []); 
+
+  console.log(gameSale)
+
+  
+
+
+
+
+
+
+
   var settings = {
-    // style: { justifyContent: "space-between"},
+    style: { justifyContent: "space-between"},
     // dots: true,
     infinite: true,
     speed: 500,
@@ -36,7 +91,7 @@ export default function SimpleThreeColumns() {
       {
         breakpoint: 2000,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           // dots: true
@@ -45,7 +100,7 @@ export default function SimpleThreeColumns() {
       {
         breakpoint: 1600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           // dots: true
@@ -82,7 +137,9 @@ export default function SimpleThreeColumns() {
         <Button>Game on Sale</Button></Flex> */}
        
           <Slider {...settings} >
-                <Product/><Product/><Product/><Product/><Product/><Product/><Product/>
+          {gameSale.map((product) => (
+                  <Product key={product.id} {...product} />
+                ))}
               </Slider>
          
               </Box></Box>

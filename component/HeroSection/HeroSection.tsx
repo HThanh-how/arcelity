@@ -183,7 +183,7 @@ import {
                             size="xl"
                             width={200}
                             textColor={"black"}
-                            onClick={()=>router.push('games/' + images[currentImageIndex]?.id)}
+                            onClick={()=>router.push('games/' + images[currentImageIndex].id)}
                           >
                             GET NOW
                           </Button>

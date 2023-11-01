@@ -20,57 +20,73 @@ import { useState } from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
-const data = {
-  isNew: true,
-  imageURL:
-    "https://www.apple.com/newsroom/images/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/article/Apple-iPhone-15-Pro-lineup-hero-230912_Full-Bleed-Image.jpg.large.jpg",
-  name: "Iphone 15 Pro Max",
-  price: 4.5,
-  rating: 4.2,
-  numReviews: 34,
-  imageAlt: "This is game",
-  discount: "20%",
-  initialPrice: 29990000,
-  oldPrice: 39000000,
-};
 
-interface RatingProps {
-  rating: number;
-  numReviews: number;
+// interface RatingProps {
+//   rating: number;
+//   numReviews: number;
+// }
+
+
+interface GameSale {
+  id: number;
+  name: string;
+  description: string;
+  releaseDate: string;
+  price: number;
+  saleDetails: SaleDetail[];
 }
 
-function Rating({ rating, numReviews }: RatingProps) {
-  return (
-    <Box display="flex" alignItems="center">
-      {Array(5)
-        .fill("")
-        .map((_, i) => {
-          const roundedRating = Math.round(rating * 2) / 2;
-          if (roundedRating - i >= 1) {
-            return (
-              <BsStarFill
-                key={i}
-                style={{ marginLeft: "1" }}
-                color={i < rating ? "teal.500" : "gray.300"}
-              />
-            );
-          }
-          if (roundedRating - i === 0.5) {
-            return <BsStarHalf key={i} style={{ marginLeft: "1" }} />;
-          }
-          return <BsStar key={i} style={{ marginLeft: "1" }} />;
-        })}
-      <Box as="span" ml="2" color="gray.600" fontSize="sm">
-        {numReviews} review{numReviews > 1 && "s"}
-      </Box>
-    </Box>
-  );
+interface SaleDetail {
+  saleId: number;
+  gameId: number;
+  discountRate: number;
+  salePromotion: SalePromotion;
 }
 
-function ProductAddToCart() {
+interface SalePromotion {
+  id: number;
+  name: string;
+  startDate: string;
+  endDate: string;
+}
+
+
+
+
+// function Rating({ rating, numReviews }: RatingProps) {
+//   return (
+//     <Box display="flex" alignItems="center">
+//       {Array(5)
+//         .fill("")
+//         .map((_, i) => {
+//           const roundedRating = Math.round(rating * 2) / 2;
+//           if (roundedRating - i >= 1) {
+//             return (
+//               <BsStarFill
+//                 key={i}
+//                 style={{ marginLeft: "1" }}
+//                 color={i < rating ? "teal.500" : "gray.300"}
+//               />
+//             );
+//           }
+//           if (roundedRating - i === 0.5) {
+//             return <BsStarHalf key={i} style={{ marginLeft: "1" }} />;
+//           }
+//           return <BsStar key={i} style={{ marginLeft: "1" }} />;
+//         })}
+//       <Box as="span" ml="2" color="gray.600" fontSize="sm">
+//         {numReviews} review{numReviews > 1 && "s"}
+//       </Box>
+//     </Box>
+//   );
+// }
+
+function ProductAddToCart(gameSale:GameSale) {
+  const router=useRouter()
   const [showIcon, setShowIcon] = useState(false);
-
+  const discountedPrice = Math.round(gameSale.price * (100 - gameSale.saleDetails[0].discountRate) / 100);
   const handleMouseEnter = () => {
     setShowIcon(true);
   };
@@ -80,12 +96,13 @@ function ProductAddToCart() {
   };
   return (
     <Flex
-      w={{ base: "200px", md: "220px" }}
+      maxW={{ base: "200px", md: "400px" }}
       alignItems="center"
       justifyContent="center"
+      onClick={()=>router.push('games/' + gameSale.id)}
     >
       <Box
-        bg={"red"}
+        bg={"white"}
         // maxW="xs"
         // borderWidth="1px"
         rounded="lg"
@@ -130,23 +147,23 @@ function ProductAddToCart() {
         )}
 
         <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
+          src={"https://www.apple.com/newsroom/images/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/article/Apple-iPhone-15-Pro-lineup-hero-230912_Full-Bleed-Image.jpg.large.jpg"}
+          alt={`Picture of ${gameSale.name}`}
           roundedTop="lg"
         />
 
         <Box p="6">
           <Box display="flex" alignItems="baseline">
-            {data.isNew && (
+
               <Badge
                 rounded="full"
                 px="2"
                 fontSize={{ base: "0.6em", md: "0.8em" }}
                 colorScheme="green"
               >
-                BASE GAME
+                DISCOUNT NOW
               </Badge>
-            )}
+        
           </Box>
 
           <Flex mt="1" justifyContent="space-between" alignContent="center">
@@ -158,7 +175,7 @@ function ProductAddToCart() {
               textColor={"black"}
               isTruncated
             >
-              {data.name}
+              {gameSale.name}
             </Box>
 
             {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
@@ -170,7 +187,7 @@ function ProductAddToCart() {
               color={"red.400"}
               pt={{ base: 0, md: 5 }}
             >
-              <Icon as={TriangleDownIcon} h={8} /> {data.discount}
+              <Icon as={TriangleDownIcon} h={8} /> {gameSale.saleDetails[0].discountRate} %
             </Box>
             <VStack>
               {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
@@ -180,7 +197,7 @@ function ProductAddToCart() {
                 style={{ textDecoration: "line-through" }}
               >
                 <Box as="span" color={"gray.400"} fontSize="lg">
-                  đ {data.oldPrice.toLocaleString("vi-VN")}
+                  $ {gameSale.price}
                 </Box>
               </Box>
               <Box
@@ -188,9 +205,9 @@ function ProductAddToCart() {
                 color={useColorModeValue("gray.800", "white")}
               >
                 <Box as="span" color={"gray.600"} fontSize="lg">
-                  đ
+                $
                 </Box>
-                {data.initialPrice.toLocaleString("vi-VN")}
+                 {discountedPrice}
               </Box>
             </VStack>
           </Flex>
