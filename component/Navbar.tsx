@@ -111,7 +111,8 @@ export default function NavBar() {
   }, [isLogin]);
 
   useEffect(() => {
-    if (pathname === "/login" && isLogin) {
+    if ((pathname === "/login" && isLogin) ||
+      (pathname === "/register" && isLogin)) {
       router.replace("/");
     }
   }, [pathname, isLogin]);

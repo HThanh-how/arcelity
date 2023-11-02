@@ -167,7 +167,7 @@ const handleLogin = async () => {
               color={"gray.800"}
               mt={4}
               w={"full"}
-              onClick={() => router.push("/sign-up")}
+              onClick={() => router.push("/register")}
             >
               First time? Register now!
             </Button>
