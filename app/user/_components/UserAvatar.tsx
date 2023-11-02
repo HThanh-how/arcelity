@@ -34,7 +34,7 @@ export default function UserAvatar() {
             ml={{ md: 0, lg: 10 }}
             textColor={"white"}
           >
-            {data?.username}
+            {data?.fullName}
           </Text>
           <HStack spacing={5} ml={{ md: 0, lg: 10 }}>
             {/* account point */}
