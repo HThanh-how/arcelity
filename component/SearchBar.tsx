@@ -70,7 +70,7 @@ const SearchBar = () => {
               <MenuList bg={"black"} border={"none"}>
                 <MenuItem bg={"black"}>Discover</MenuItem>
                 <MenuItem bg={"black"}>Browser</MenuItem>
-                <MenuItem bg={"black"}>Browser</MenuItem>
+                {/* <MenuItem bg={"black"}>Browser</MenuItem> */}
               </MenuList>
             </Menu>
       </Flex></>
