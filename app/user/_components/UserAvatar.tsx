@@ -5,17 +5,35 @@ import {
   Flex,
   GridItem,
   HStack,
+  Icon,
+  IconButton,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverTrigger,
   SimpleGrid,
   Text,
+  useDisclosure,
+  Popover,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  ButtonGroup,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
 import useGetUserInfoApi from "../_api/useGetUserInfoApi";
+import UpdateProfileApi from "../_api/updateProfileApi";
+
 
 export default function UserAvatar() {
   const [{ data, isLoading, isError }] = useGetUserInfoApi();
 
+
   return (
     <Card w={"fit-content"} bg={"none"}>
+    
       <SimpleGrid columns={{ md: 1, lg: 3 }}>
         {/* account avatar */}
         <GridItem colSpan={1}>
@@ -28,14 +46,7 @@ export default function UserAvatar() {
         </GridItem>
         {/* account description */}
         <GridItem colSpan={2}>
-          <Text
-            my={5}
-            fontSize={{ md: 20, lg: 30 }}
-            ml={{ md: 0, lg: 10 }}
-            textColor={"white"}
-          >
-            {data?.fullName}
-          </Text>
+        <UpdateProfileApi/>
           <HStack spacing={5} ml={{ md: 0, lg: 10 }}>
             {/* account point */}
             <Container p={0} m={0}>
