@@ -32,7 +32,7 @@ import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 import { EditIcon } from "@chakra-ui/icons";
 import useGetUserInfoApi from "../_api/useGetUserInfoApi";
 
-export default function updateProfileApi() {
+export default function UpdateProfileApi() {
   const { onOpen, onClose, isOpen } = useDisclosure();
   const toast = useToast();
   const [{ data, isLoading, isError }] = useGetUserInfoApi();
