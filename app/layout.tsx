@@ -7,7 +7,7 @@ import Navbar from "../component/Layout/Navbar";
 import theme from "@/theme";
 import Footer from "@/component/Layout/Footer";
 ;
-
+import SearchBar from "@/component/Layout/SearchBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +39,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ChakraProvider theme={theme}>
           <Navbar />
+          <SearchBar /> 
           {children} 
       {/* <Footer/> */}
         </ChakraProvider>
