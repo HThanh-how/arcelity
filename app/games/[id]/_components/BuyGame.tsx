@@ -14,7 +14,7 @@ import {
 import React, { useContext, useEffect } from "react";
 import { IGameBuyDetail } from "../_interface/IGameBuyDetail";
 import axios from 'axios';
-import { IsLoginContext } from "@/component/Navbar";
+import { IsLoginContext } from "@/component/Layout/Navbar";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 

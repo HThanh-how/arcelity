@@ -17,7 +17,7 @@ import {
 import { FcAssistant, FcDonate, FcInTransit } from "react-icons/fc";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import NavigationTag from "@/component/NavigationTag";
+import NavigationTag from "@/component/OnSaleSection/NavigationTag";
 import Slider from "react-slick";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/navigation";

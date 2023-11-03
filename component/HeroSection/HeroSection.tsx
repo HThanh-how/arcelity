@@ -22,14 +22,9 @@ import {
   import axios from "axios";
   import { useRouter } from "next/navigation";
   
-  const images = [
-    "https://picsum.photos/id/92/4000/4000.jpg",
-    "https://picsum.photos/id/925/4000/4000.jpg",
-    "https://picsum.photos/id/935/4000/4000.jpg",
-  ];
+
   
-  
-  interface Game {
+  export interface Game {
     id: number;
     name: string;
     description: string;

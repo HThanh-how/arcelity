@@ -3,9 +3,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../component/Navbar";
+import Navbar from "../component/Layout/Navbar";
 import theme from "@/theme";
-import Footer from "@/component/Footer";
+import Footer from "@/component/Layout/Footer";
 ;
 
 
