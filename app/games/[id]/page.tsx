@@ -6,6 +6,9 @@ import {
   SimpleGrid,
   GridItem,
   Skeleton,
+  Text,
+  Flex,
+  Spacer,
 } from "@chakra-ui/react";
 import React, { use } from "react";
 import GameImages from "./_components/GameImages";
@@ -13,9 +16,23 @@ import BuyGame from "./_components/BuyGame";
 import GameDescription from "./_components/GameDescription";
 import useGameGetIdApi from "./_api/useGameIdApi";
 import CommentSection from "./_components/CommentSection";
+import AddComment from "./_components/AddComment";
+import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 
 export default function GamePage({ params }: { params: { id: string } }) {
+  const [show, setShow] = React.useState(false);
+  const [number, setNumber] = React.useState(3);
   const [{ data, isLoading, isError }] = useGameGetIdApi(params.id);
+  const handleShow = () => {
+    setShow(!show);
+    if (show) {
+      setNumber(6);
+    } else {
+      setNumber(3);
+    }
+  };
+  const isLogin = getFromLocalStorage("access_token") != null;
+  console.log(getFromLocalStorage("access_token"));
   return (
     <Container p={0} maxW={"75%"} my={10}>
       {data != undefined && (
@@ -47,17 +64,47 @@ export default function GamePage({ params }: { params: { id: string } }) {
                   systemRequirements={data.systemRequirements}
                 />
               </Skeleton>
+
+              {/* Ratings & Reviews */}
               <Skeleton isLoaded={!isLoading}>
-                {data.ratings.map((rating) => (
-                  <CommentSection
-                    key={rating.id}
-                    id={rating.id}
-                    comment={rating.comment}
-                    ratingStar={rating.ratingStar}
-                    ratingDateTIme={rating.ratingDateTIme}
-                    user={rating.user}
-                  />
-                ))}
+                <Flex>
+                  <Text
+                    justifyContent={"left"}
+                    w={"full"}
+                    fontWeight={"bold"}
+                    py={5}
+                  >
+                    Ratings & Reviews
+                  </Text>
+                  <Spacer />
+                  <Text
+                    align={"right"}
+                    w={"full"}
+                    fontWeight={"bold"}
+                    py={5}
+                    textColor={"whiteAlpha.600"}
+                    _hover={{ textColor: "white" }}
+                    onClick={handleShow}
+                  >
+                    {show ? "Show more" : "Show less"}
+                  </Text>
+                </Flex>
+                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={5}>
+                  {data.ratings.slice(0, number).map((rating) => (
+                    <CommentSection
+                      key={rating.id}
+                      id={rating.id}
+                      comment={rating.comment}
+                      ratingStar={rating.ratingStar}
+                      ratingDateTIme={rating.ratingDateTIme}
+                      user={rating.user}
+                    />
+                  ))}
+                </SimpleGrid>
+
+                {/* Add comment */}
+
+                {isLogin && <AddComment gameId={data.id} />}
               </Skeleton>
             </GridItem>
           </SimpleGrid>
