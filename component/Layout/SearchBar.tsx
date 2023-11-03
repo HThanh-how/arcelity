@@ -16,33 +16,26 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
-import { Game } from "../HeroSection/HeroSection";
-import axios from "axios";
+import allGameDataAPI from "../AllGameAPI";
+import searchGames from "./SearchResult";
+import {Game} from "../AllGameAPI";
 
 const SearchBar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [search, openSearch] = useState(false);
-  const [searchContent, setSearchContent] = useState("");
-  const router = useRouter();
-  const [gameAPI, setGameAPI] = useState<Game[]>([]);
-  const [images, setImages] = useState<Game[]>([]);
+  const [query, setQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<Game[]>([]);
+  const [allGameData, images] = allGameDataAPI();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://game-be-crud.vercel.app/game/getall"
-        );
-        const gameData: Game[] = response.data;
-        setGameAPI(gameData);
-        
-      } catch (error) {
-        console.error("Lỗi khi lấy dữ liệu từ API:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuery = event.target.value;
+    setQuery(newQuery);
+    const results = searchGames(newQuery, allGameData);
+    setSearchResults(results);
+    console.log(results);
+  };
+
+  const router = useRouter();
 
   return (
     <>
@@ -64,8 +57,8 @@ const SearchBar = () => {
             bg={useColorModeValue("#171717", "gray.600")}
             rounded={"full"}
             border={0}
-            value={searchContent}
-            onChange={(event) => setSearchContent(event.target.value)}
+            value={query}
+            onChange={handleInputChange}
             _focus={{
               bg: useColorModeValue("gray.800", "gray.200"),
               outline: "gray.200",

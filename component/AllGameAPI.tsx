@@ -31,7 +31,7 @@ const allGameDataAPI = () => {
     const fetchData = async () => {
     
         try {
-          const response = await axios.get('https://game-be-crud.vercel.app/game/getall')
+          const response = await axios.get(url)
           const gameData: Game[] = response.data;
           setAllGameData(gameData);
           setImages(gameData.slice(0, 5))
@@ -44,7 +44,7 @@ const allGameDataAPI = () => {
 
     
 
-  return [{ allGameData, images }];
+  return [ allGameData, images ];
 };
 
 export default allGameDataAPI;

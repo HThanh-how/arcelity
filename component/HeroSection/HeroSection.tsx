@@ -42,7 +42,7 @@ import {
   
   
   const ImageCarousel = () => {
-    const [{ allGameData, images }]=allGameDataAPI()
+    const [ allGameData, images ]=allGameDataAPI()
     const router=useRouter()
     const [gameAPI, setGameAPI] = useState<Game[]>([]);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
