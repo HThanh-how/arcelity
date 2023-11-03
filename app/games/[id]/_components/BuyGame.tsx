@@ -13,46 +13,38 @@ import {
 } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 import { IGameBuyDetail } from "../_interface/IGameBuyDetail";
-import axios from 'axios';
+import axios from "axios";
 import { IsLoginContext } from "@/component/Navbar";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
-
 async function postData(gameID: number, priceWithDiscount: number) {
-
   try {
-    const access_token = localStorage.getItem('access_token'); 
+    const access_token = localStorage.getItem("access_token");
 
     const data = {
       details: [
         {
           gameId: gameID,
-          priceWithDiscount: priceWithDiscount
-        }
-      ]
+          priceWithDiscount: priceWithDiscount,
+        },
+      ],
     };
 
-    const response = await axios.post('https://game-be-v2.vercel.app/billings/addBilling', data, {
-      headers: {
-        Authorization: `Bearer ${access_token}` 
+    const response = await axios.post(
+      "https://game-be-v2.vercel.app/billings/addBilling",
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
       }
-    });
-    console.log(response.data); 
-
+    );
+    console.log(response.data);
   } catch (error) {
-    window.location.href = "/login"
-
-
-
-
-
+    window.location.href = "/login";
   }
 }
-
-
-
-
 
 export default function BuyGame({
   price,
@@ -61,14 +53,12 @@ export default function BuyGame({
   genres,
   saleDetails,
 }: IGameBuyDetail) {
-  
   const pathname = usePathname();
 
   useEffect(() => {
     localStorage.setItem("historyPathname", pathname);
   }, []);
 
-  
   return (
     <Container p={0} ml={{ lg: 10 }}>
       <Card border={"none"} bg={"none"} textColor={"white"}>
@@ -117,7 +107,7 @@ export default function BuyGame({
             bgColor={"blue.500"}
             _hover={{ bgColor: "blue.400" }}
             textTransform={"uppercase"}
-            onClick={()=>postData(developer.id, price)}
+            onClick={() => postData(developer.id, price)}
           >
             Buy Now
           </Button>
@@ -127,7 +117,6 @@ export default function BuyGame({
             variant="outline"
             textTransform={"uppercase"}
             _hover={{ bgColor: "whiteAlpha.300" }}
-
           >
             Add to cart
           </Button>
