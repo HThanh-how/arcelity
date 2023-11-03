@@ -20,11 +20,14 @@ import allGameDataAPI from "../AllGameAPI";
 import searchGames from "./SearchResult";
 import {Game} from "../AllGameAPI";
 
+
+let searchResults: Game[] = [];
+
 const SearchBar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [search, openSearch] = useState(false);
   const [query, setQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<Game[]>([]);
+  const [searchResult, setSearchResults] = useState<Game[]>([]);
   const [allGameData, images] = allGameDataAPI();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +35,8 @@ const SearchBar = () => {
     setQuery(newQuery);
     const results = searchGames(newQuery, allGameData);
     setSearchResults(results);
-    console.log(results);
+    searchResults = results;
+    // console.log(results);
   };
 
   const router = useRouter();
@@ -135,3 +139,4 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+export {  searchResults };
