@@ -24,6 +24,7 @@ export interface Game {
 const allGameDataAPI = () => {
   const url = "https://game-be-v2.vercel.app/games";
   const [allGameData, setAllGameData] = useState<Game[]>([]);
+  const [images, setImages] = useState<Game[]>([]);
 
 
   useEffect(() => {
@@ -33,16 +34,17 @@ const allGameDataAPI = () => {
           const response = await axios.get('https://game-be-crud.vercel.app/game/getall')
           const gameData: Game[] = response.data;
           setAllGameData(gameData);
+          setImages(gameData.slice(0, 5))
         } catch (error) {
           console.error('Lỗi khi lấy dữ liệu từ API:', error);
         }
       };
       fetchData();
     }, []); 
-    // console.log(allGameData);
+
     
 
-  return [{ allGameData }];
+  return [{ allGameData, images }];
 };
 
 export default allGameDataAPI;

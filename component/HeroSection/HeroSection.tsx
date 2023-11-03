@@ -22,6 +22,7 @@ import {
   import axios from "axios";
   import { useRouter } from "next/navigation";
   import allGameDataAPI from "../AllGameAPI";
+
   
 
   
@@ -41,28 +42,9 @@ import {
   
   
   const ImageCarousel = () => {
-    const [{ allGameData }]=allGameDataAPI()
+    const [{ allGameData, images }]=allGameDataAPI()
     const router=useRouter()
     const [gameAPI, setGameAPI] = useState<Game[]>([]);
-    const [images, setImages] = useState<Game[]>([]);
-  
-    useEffect(() => {
-        
-        
-      // const fetchData = async () => {
-        
-      //   try {
-      //     const response = await axios.get('https://game-be-crud.vercel.app/game/getall')
-      //     const gameData: Game[] = response.data;
-      //     setGameAPI(gameData);
-      //     setImages(gameData.slice(0, 5))
-      //   } catch (error) {
-      //     console.error('Lỗi khi lấy dữ liệu từ API:', error);
-      //   }
-      // };
-      // fetchData();
-      setImages(allGameData.slice(0, 5))
-    }, []); 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const toast = useToast();
     
