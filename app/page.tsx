@@ -1,6 +1,5 @@
 "use client";
 import ProductSection from "../component/OnSaleSection/ProductSection";
-import NameTag from "../component/NameTag";
 import { Container } from "postcss";
 import { Box } from "@chakra-ui/react";
 import HeroSection from "@/component/HeroSection/HeroSection";
