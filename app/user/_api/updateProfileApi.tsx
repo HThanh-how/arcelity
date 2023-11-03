@@ -22,10 +22,11 @@ import {
   ButtonGroup,
   Button,
   useToast,
+  FormErrorMessage,
 } from "@chakra-ui/react";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IUserInfo } from "../_interface/IUseInfo";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 import { EditIcon } from "@chakra-ui/icons";
@@ -36,12 +37,28 @@ export default function updateProfileApi() {
   const toast = useToast();
   const [{ data, isLoading, isError }] = useGetUserInfoApi();
   const [fullName, setFullname] = useState<string>("");
+  const [nameError, setNameError] = useState("");
 
   useEffect(() => {
     setFullname(data?.fullName || "");
   }, [data?.fullName]);
 
+  const validateFullName = () => {
+    if (!fullName) {
+      setNameError("Please input your name");
+    } else if (!/^[^~`!@#$%^&*()_+={}[\]|;:'",.<>?]+$/u.test(fullName)) {
+      setNameError("Invalid name");
+    } else {
+      setNameError("");
+    }
+  };
+
   const handleChangeName = async () => {
+    validateFullName();
+    if (nameError !== "") {
+      return;
+    }
+
     try {
       const access_token = localStorage.getItem("access_token");
       const response = await axios.put(
@@ -68,7 +85,6 @@ export default function updateProfileApi() {
   const handleUnchangeName = () => {
     onClose();
     setFullname(data?.fullName || "");
-    
   };
 
   return (
@@ -90,11 +106,14 @@ export default function updateProfileApi() {
           <PopoverCloseButton />
           <Stack spacing={4}>
             <Text fontWeight={600}>Change your name</Text>
-            <Input
-              placeholder={data?.fullName}
-              defaultValue={fullName}
-              onChange={(e) => setFullname(e.target.value)}
-            />
+            <FormControl isInvalid={!!nameError}>
+              <Input
+                placeholder={data?.fullName}
+                defaultValue={fullName}
+                onChange={(e) => setFullname(e.target.value)}
+              />
+              <FormErrorMessage>{nameError}</FormErrorMessage>
+            </FormControl>
             <ButtonGroup display="flex" justifyContent="flex-end">
               <Button variant="outline" onClick={() => handleUnchangeName()}>
                 Cancel
