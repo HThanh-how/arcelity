@@ -50,20 +50,30 @@ import {
     
     // console.log(images[3]?.game)
   
-    const handleAutoSlide = () => {
-      const nextIndex = (currentImageIndex + 1) % images.length;
-      setCurrentImageIndex(nextIndex);
-    };
+    // const handleAutoSlide = () => {
+    //   const nextIndex = (currentImageIndex + 1) % images.length;
+    //   setCurrentImageIndex(nextIndex);
+    // };
   
     
+    // useEffect(() => {
+    //   const timeout = setTimeout(handleAutoSlide, 10000);
+    //   return () => clearTimeout(timeout);
+    // }, [currentImageIndex]);
+
     useEffect(() => {
-      const timeout = setTimeout(handleAutoSlide, 10000);
-      return () => clearTimeout(timeout);
-    }, [currentImageIndex]);
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5);
+      }, 3000);
+  
+      return () => clearInterval(interval);
+    }, []);
   
     const handleImageClick = (index: SetStateAction<number>) => {
       setCurrentImageIndex(index);
     };
+    
+    
     useEffect(() => {
       localStorage.setItem("historyPathname", "/");
     }, []);
