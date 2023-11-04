@@ -11,4 +11,26 @@
 // }
 
 
-//Đóng lại test thử
+// //Đóng lại test thử
+
+
+import React, { createContext, useState } from 'react';
+
+interface MessageData {
+  message: string;
+  setMessage: (message: string) => void;
+}
+
+export const MessageContext = createContext<MessageData | undefined>(undefined);
+
+const App = () => {
+  const [message, setMessage] = useState('');
+
+  return (
+    <MessageContext.Provider value={{ message, setMessage }}>
+      {/* Other components */}
+    </MessageContext.Provider>
+  );
+};
+
+export default App;
