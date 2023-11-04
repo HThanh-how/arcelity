@@ -36,10 +36,9 @@ const SearchBar = () => {
     }
   };
 
-
+  if (data) {searchResults=data;}
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
-    console.log(newQuery);
     setQuery(newQuery);
     if (data) {
       const results = searchGames(newQuery, data);
@@ -117,9 +116,9 @@ const SearchBar = () => {
             bg: useColorModeValue("gray.800", "gray.200"),
             outline: "gray.200",
           }}
-          // value={query}
-          // onChange={handleInputChange}
-          // onKeyDown={handleKeyDown}
+          value={query}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
         />
         <Menu variant={"black"}>
           <MenuButton
