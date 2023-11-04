@@ -117,9 +117,9 @@ const SearchBar = () => {
             bg: useColorModeValue("gray.800", "gray.200"),
             outline: "gray.200",
           }}
-          value={query}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
+          // value={query}
+          // onChange={handleInputChange}
+          // onKeyDown={handleKeyDown}
         />
         <Menu variant={"black"}>
           <MenuButton
