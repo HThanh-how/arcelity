@@ -21,22 +21,26 @@ import { IGameCard } from "@/app/games/_interface/IGameCard";
 import useGetAllGameApi from "@/app/games/_api/useGetAllGameApi";
 import searchGames from "./SearchResult";
 
-
 let searchResults: IGameCard[] = [];
 
 const SearchBar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [search, openSearch] = useState(false);
   const [query, setQuery] = useState("");
-  const [{ data, isLoading, isError }] = useGetAllGameApi()
+  const [{ data, isLoading, isError }] = useGetAllGameApi();
   const [allGameData, images] = allGameDataAPI();
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      router.push('/search');
+    if (event.key === "Enter") {
+      router.push("/search");
     }
   };
 
-  if (data) {searchResults=data;}
+  useEffect(() => {
+    if (data) {
+      searchResults = data;
+    }
+  }, []);
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
     setQuery(newQuery);
@@ -150,4 +154,4 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-export {  searchResults };
+export { searchResults };
