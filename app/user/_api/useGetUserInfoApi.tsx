@@ -28,6 +28,7 @@ const useGetUserInfoApi = () => {
             setData(response.data);
           });
       } catch (error) {
+        console.log("errorrrrrr");
         setIsError(true);
       }
       setIsLoading(false);

@@ -18,21 +18,21 @@ import useGameGetIdApi from "./_api/useGameIdApi";
 import CommentSection from "./_components/CommentSection";
 import AddComment from "./_components/AddComment";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
+import useGetUserInfoApi from "@/app/user/_api/useGetUserInfoApi";
 
 export default function GamePage({ params }: { params: { id: string } }) {
   const [show, setShow] = React.useState(false);
   const [number, setNumber] = React.useState(3);
   const [{ data, isLoading, isError }] = useGameGetIdApi(params.id);
+
   const handleShow = () => {
     setShow(!show);
     if (show) {
-      setNumber(6);
-    } else {
       setNumber(3);
+    } else {
+      setNumber(6);
     }
   };
-  const isLogin = getFromLocalStorage("access_token") != null;
-  console.log(getFromLocalStorage("access_token"));
   return (
     <Container p={0} maxW={"75%"} my={10}>
       {data != undefined && (
@@ -86,7 +86,7 @@ export default function GamePage({ params }: { params: { id: string } }) {
                     _hover={{ textColor: "white" }}
                     onClick={handleShow}
                   >
-                    {show ? "Show more" : "Show less"}
+                    {show ? "Show less" : "Show more"}
                   </Text>
                 </Flex>
                 <SimpleGrid columns={{ base: 1, md: 3 }} spacing={5}>
@@ -104,7 +104,7 @@ export default function GamePage({ params }: { params: { id: string } }) {
 
                 {/* Add comment */}
 
-                {isLogin && <AddComment gameId={data.id} />}
+                {<AddComment gameId={data.id} />}
               </Skeleton>
             </GridItem>
           </SimpleGrid>
