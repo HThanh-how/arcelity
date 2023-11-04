@@ -131,7 +131,7 @@ export default function SimpleThreeColumns() {
     return ( 
 
       <Box display="flex" justifyContent="center" alignItems="center" >
-  <Box alignSelf="center" width="100%" maxWidth={{base:"full", lg:"70vw"}} justifyContent="space-between" pl={8}>
+  <Box alignSelf="center" width="100%" maxWidth={{base:"full", lg:"75vw"}} justifyContent="space-between" pl={8}>
         <NavigationTag name="Game on Sale" url="#" />
         {/* <Flex width="70vw">
         <Button>Game on Sale</Button></Flex> */}

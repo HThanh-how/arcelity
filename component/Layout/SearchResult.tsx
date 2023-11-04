@@ -1,9 +1,11 @@
 
 import allGameDataAPI, { Game } from "../AllGameAPI";
+import { IGameCard } from "@/app/games/_interface/IGameCard";
+import useGetAllGameApi from "@/app/games/_api/useGetAllGameApi";
 
-const searchGames = (query: string, allGameData: Game[]): Game[] => {
+const searchGames = (query: string, allGameData: IGameCard[]): IGameCard[] => {
 
-  const result: Game[] = [];
+  const result: IGameCard[] = [];
 
   for (const game of allGameData) {
     if (game.name.toLowerCase().includes(query.toLowerCase())) {

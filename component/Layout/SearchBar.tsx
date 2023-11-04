@@ -17,26 +17,34 @@ import {
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import allGameDataAPI from "../AllGameAPI";
+import { IGameCard } from "@/app/games/_interface/IGameCard";
+import useGetAllGameApi from "@/app/games/_api/useGetAllGameApi";
 import searchGames from "./SearchResult";
-import {Game} from "../AllGameAPI";
 
 
-let searchResults: Game[] = [];
+let searchResults: IGameCard[] = [];
 
 const SearchBar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [search, openSearch] = useState(false);
   const [query, setQuery] = useState("");
-  const [searchResult, setSearchResults] = useState<Game[]>([]);
+  const [{ data, isLoading, isError }] = useGetAllGameApi()
   const [allGameData, images] = allGameDataAPI();
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      router.push('/search');
+    }
+  };
+
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
+    console.log(newQuery);
     setQuery(newQuery);
-    const results = searchGames(newQuery, allGameData);
-    setSearchResults(results);
-    searchResults = results;
-    // console.log(results);
+    if (data) {
+      const results = searchGames(newQuery, data);
+      searchResults = results;
+    }
   };
 
   const router = useRouter();
@@ -52,7 +60,7 @@ const SearchBar = () => {
         pb="2"
         display={{ base: "none", md: "flex" }}
       >
-        <Flex width="70vw" alignItems={"center"}>
+        <Flex width="75vw" alignItems={"center"}>
           <Input
             width="400px"
             type={"text"}
@@ -63,6 +71,7 @@ const SearchBar = () => {
             border={0}
             value={query}
             onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
             _focus={{
               bg: useColorModeValue("gray.800", "gray.200"),
               outline: "gray.200",

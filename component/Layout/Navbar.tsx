@@ -54,7 +54,7 @@ const NavLink = (props: Props) => {
 
 export default function NavBar() {
   
-  console.log("Kết quả: ", searchResults);
+  // console.log("Kết quả: ", searchResults);
   
   const [lastTimeAccess, setLastTimeAccess] = useState("2020");
   const [isLogin, setIsLogin] = useState(false);

@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IGameCard } from "../_interface/IGameCard";
+import { IGameInfo } from "../_interface/IGameInfo";
 
-const useGetAllGameApi = () => {
-  const url = "https://game-be-crud.vercel.app/game/getall";
-  const [data, setData] = useState<IGameCard[]>();
+const useGameGetIdApi = (gameID: string) => {
+  const url = "https://game-be-v2.vercel.app/games/getGameInfo/" + gameID;
+  const [data, setData] = useState<IGameInfo>();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -29,4 +29,4 @@ const useGetAllGameApi = () => {
   return [{ data, isLoading, isError }];
 };
 
-export default useGetAllGameApi;
+export default useGameGetIdApi;

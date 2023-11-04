@@ -104,7 +104,7 @@ import {
           display={{ base: "none", lg: "flex" }}
         >
           <Stack align={"center"}>
-            <HStack width={"70vw"}>
+            <HStack width={"75vw"}>
               <Box mt={4} textAlign="center" width={"50vw"}>
                 <AspectRatio maxW={"full"} ratio={16 / 9}>
                   <Box position="relative">
