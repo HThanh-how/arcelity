@@ -3,7 +3,7 @@ import ProductSection from "../component/OnSaleSection/ProductSection";
 
 import { Box, Container, Flex, Icon } from "@chakra-ui/react";
 import HeroSection from "@/component/HeroSection/HeroSection";
-import GameList from "./games/_components/GameList";
+import GameList from "./search/_components/GameList";
 import TopTable from "@/component/TopGames/TopTableSection";
 import { useRouter } from "next/navigation";
 import { ChevronRightIcon } from "@chakra-ui/icons";
