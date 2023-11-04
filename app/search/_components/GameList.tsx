@@ -19,7 +19,7 @@ export default function GameList() {
 
   setInterval(function () {
     setData(searchResults);
-  }, 100);
+  }, 300);
 
 
   const isLoading=false;
