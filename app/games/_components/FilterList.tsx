@@ -7,10 +7,12 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
 import { IGenreList } from "../_interface/IGenre";
+import { FilterContext } from "../page";
 
 export default function FilterList({ genres, name }: IGenreList) {
+  let { handleFilter } = useContext(FilterContext);
   return (
     <AccordionItem py={2}>
       <h2>
@@ -42,6 +44,7 @@ export default function FilterList({ genres, name }: IGenreList) {
               textColor={"whiteAlpha.600"}
               bg={"none"}
               _hover={{ textColor: "white" }}
+              onClick={() => handleFilter(genre.name)}
             >
               {genre.name}
             </Button>
