@@ -35,7 +35,7 @@ export default function GameList({ filter }: GameListProps) {
             if (filter == "") {
               return true;
             }
-            if (game.genres.some((genre) => genre.name == filter)) {
+            if (game.genres?.some((genre) => genre.name == filter)) {
               return true;
             } else {
               return false;
