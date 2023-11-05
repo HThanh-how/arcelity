@@ -4,13 +4,10 @@ import { Container, Flex, Spacer } from "@chakra-ui/react";
 import FilterBar from "./_components/FilterBar";
 import GameList from "./_components/GameList";
 import { createContext, useState } from "react";
-
+import { FilterContext } from "./_components/_context/FilterContext";
 interface FilterContextProps {
   handleFilter: (name: string) => void;
 }
-export const FilterContext = createContext<FilterContextProps>({
-  handleFilter: () => {},
-});
 
 export default function AllGamePage() {
   const [filter, setFilter] = useState("");

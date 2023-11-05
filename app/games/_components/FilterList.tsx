@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { IGenreList } from "../_interface/IGenre";
-import { FilterContext } from "../page";
+import { FilterContext } from "./_context/FilterContext";
 
 export default function FilterList({ genres, name }: IGenreList) {
   let { handleFilter } = useContext(FilterContext);
