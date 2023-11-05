@@ -15,10 +15,9 @@ import {
 import { FcAssistant, FcDonate, FcInTransit } from "react-icons/fc";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import NavigationTag from "@/component/OnSaleSection/NavigationTag"
+import NavigationTag from "@/component/OnSaleSection/NavigationTag";
 import Slider from "react-slick";
 import axios from "axios";
-
 
 interface GameSale {
   id: number;
@@ -43,37 +42,25 @@ interface SalePromotion {
   endDate: string;
 }
 
-
-
-
 export default function SimpleThreeColumns() {
   const [gameSale, setGameSale] = useState<GameSale[]>([]);
 
   useEffect(() => {
-        
-        
     const fetchData = async () => {
-      
       try {
-        const response = await axios.get('https://game-be-v2.vercel.app/games/gamesOnSale')
+        const response = await axios.get(
+          "https://game-be-v2.vercel.app/games/gamesOnSale"
+        );
         const gameData: GameSale[] = response.data;
         setGameSale(gameData);
       } catch (error) {
-        console.error('Lỗi khi lấy dữ liệu từ API:', error);
+        console.error("Lỗi khi lấy dữ liệu từ API:", error);
       }
     };
     fetchData();
-  }, []); 
+  }, []);
 
-  console.log(gameSale)
-
-  
-
-
-
-
-
-
+  // console.log(gameSale)
 
   var settings = {
     style: { justifyContent: "space-between"},
@@ -81,11 +68,12 @@ export default function SimpleThreeColumns() {
     infinite: true,
     speed: 500,
     initialSlide: 0,
-    slidesToShow: 4,
+    slidesToShow: 3,
     swipeToSlide: true,
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 3000,
+
     // fade: true,
     responsive: [
       {
@@ -119,30 +107,37 @@ export default function SimpleThreeColumns() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-           dots: true, 
-           arrow: false,
-           centerMode: true,
-
+          // dots: true,
+          // arrow: false,
+          // centerMode: true,
         },
       },
     ],
   };
-  
-    return ( 
 
-      <Box display="flex" justifyContent="center" alignItems="center" >
-  <Box alignSelf="center" width="100%" maxWidth={{base:"full", lg:"75vw"}} justifyContent="space-between" pl={8}>
-        <NavigationTag name="Game on Sale" url="#" />
-        {/* <Flex width="70vw">
-        <Button>Game on Sale</Button></Flex> */}
-       
-          <Slider {...settings} >
-          {gameSale.map((product) => (
-                  <Product key={product.id} {...product} />
-                ))}
-              </Slider>
-         
-              </Box></Box>
-    );
-  }    
+  return (
+    <Container p={0} maxW={{ base: "85%", lg: "80%" }} my={10}>
+      {/* <Box alignSelf="center" width="100%" maxWidth={{base:"95vw", lg:"75vw"}}  pl={8}> */}
+      <NavigationTag name="Game on Sale" url="#" />
+     
   
+
+      <Slider {...settings}>
+        {gameSale.map((product) => (
+
+            <Product key={product.id} {...product} />
+            
+    
+        ))} {gameSale.map((product) => (
+
+          <Product key={product.id} {...product} />
+          
+  
+      ))}
+      </Slider>
+
+
+      {/* </Box> */}
+    </Container>
+  );
+}

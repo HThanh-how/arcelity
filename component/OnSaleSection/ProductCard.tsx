@@ -15,6 +15,7 @@ import {
   IconButton,
   HStack,
   VStack,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
@@ -22,12 +23,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
-
 // interface RatingProps {
 //   rating: number;
 //   numReviews: number;
 // }
-
 
 interface GameSale {
   id: number;
@@ -52,41 +51,12 @@ interface SalePromotion {
   endDate: string;
 }
 
-
-
-
-// function Rating({ rating, numReviews }: RatingProps) {
-//   return (
-//     <Box display="flex" alignItems="center">
-//       {Array(5)
-//         .fill("")
-//         .map((_, i) => {
-//           const roundedRating = Math.round(rating * 2) / 2;
-//           if (roundedRating - i >= 1) {
-//             return (
-//               <BsStarFill
-//                 key={i}
-//                 style={{ marginLeft: "1" }}
-//                 color={i < rating ? "teal.500" : "gray.300"}
-//               />
-//             );
-//           }
-//           if (roundedRating - i === 0.5) {
-//             return <BsStarHalf key={i} style={{ marginLeft: "1" }} />;
-//           }
-//           return <BsStar key={i} style={{ marginLeft: "1" }} />;
-//         })}
-//       <Box as="span" ml="2" color="gray.600" fontSize="sm">
-//         {numReviews} review{numReviews > 1 && "s"}
-//       </Box>
-//     </Box>
-//   );
-// }
-
-function ProductAddToCart(gameSale:GameSale) {
-  const router=useRouter()
+function ProductAddToCart(gameSale: GameSale) {
+  const router = useRouter();
   const [showIcon, setShowIcon] = useState(false);
-  const discountedPrice = Math.round(gameSale.price * (100 - gameSale.saleDetails[0].discountRate) / 100);
+  const discountedPrice = Math.round(
+    (gameSale.price * (100 - gameSale.saleDetails[0].discountRate)) / 100
+  );
   const handleMouseEnter = () => {
     setShowIcon(true);
   };
@@ -96,21 +66,21 @@ function ProductAddToCart(gameSale:GameSale) {
   };
   return (
     <Flex
-      maxW={{ base: "200px", md: "400px" }}
+      // maxW={{ base: "200px", md: "400px" }}
       alignItems="center"
       justifyContent="center"
-      onClick={()=>router.push('games/' + gameSale.id)}
+
+      // maxH="800px"
     >
       <Box
         bg={"white"}
-        // maxW="xs"
-        // borderWidth="1px"
         rounded="lg"
         shadow="lg"
         position="relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         cursor={"pointer"}
+        w={{ base: "80vw", sm: "35vw", lg: "20vw" }}
       >
         {/* {data.isNew && (
           <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
@@ -139,31 +109,38 @@ function ProductAddToCart(gameSale:GameSale) {
                 w={7}
                 alignSelf={"right"}
                 zIndex={4}
-                color={"white"}
+                color={"black"}
                 position="absolute"
               />
             </Button>
           </Tooltip>
         )}
-
-        <Image
-          src={"https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg"}
-          alt={`Picture of ${gameSale.name}`}
-          roundedTop="lg"
-        />
-
-        <Box p="6">
+        <AspectRatio maxW={"full"} ratio={4 / 3}>
+          <Image
+            src={
+              "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg"
+            }
+            alt={`Picture of ${gameSale.name}`}
+            roundedTop="lg"
+            opacity={0.8}
+            _hover={{ opacity: 1 }}
+            objectFit={"cover"}
+          />
+        </AspectRatio>
+        <Box
+          p="6"
+          onClick={() => router.push("games/" + gameSale.id)}
+          w={{ base: "80vw", md: "35vw", lg: "20vw" }}
+        >
           <Box display="flex" alignItems="baseline">
-
-              <Badge
-                rounded="full"
-                px="2"
-                fontSize={{ base: "0.6em", md: "0.8em" }}
-                colorScheme="green"
-              >
-                DISCOUNT NOW
-              </Badge>
-        
+            <Badge
+              rounded="full"
+              px="2"
+              fontSize={{ base: "0.6em", md: "0.8em" }}
+              colorScheme="green"
+            >
+              DISCOUNT NOW
+            </Badge>
           </Box>
 
           <Flex mt="1" justifyContent="space-between" alignContent="center">
@@ -173,7 +150,7 @@ function ProductAddToCart(gameSale:GameSale) {
               as="h4"
               lineHeight="tight"
               textColor={"black"}
-              isTruncated
+              // isTruncated
             >
               {gameSale.name}
             </Box>
@@ -187,7 +164,8 @@ function ProductAddToCart(gameSale:GameSale) {
               color={"red.400"}
               pt={{ base: 0, md: 5 }}
             >
-              <Icon as={TriangleDownIcon} h={8} /> {gameSale.saleDetails[0].discountRate} %
+              <Icon as={TriangleDownIcon} h={8} />{" "}
+              {gameSale.saleDetails[0].discountRate} %
             </Box>
             <VStack>
               {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
@@ -205,9 +183,9 @@ function ProductAddToCart(gameSale:GameSale) {
                 color={useColorModeValue("gray.800", "white")}
               >
                 <Box as="span" color={"gray.600"} fontSize="lg">
-                $
+                  $
                 </Box>
-                 {discountedPrice}
+                {discountedPrice}
               </Box>
             </VStack>
           </Flex>
