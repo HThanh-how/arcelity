@@ -11,6 +11,7 @@ export default function WithSubnavigation() {
   const router=useRouter()
   return (
     <>
+    <title>Arcelity</title>
       <HeroSection />
       <ProductSection />
 

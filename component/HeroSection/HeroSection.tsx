@@ -217,6 +217,7 @@ import {
                         w={"4vw"}
                         objectFit="cover"
                         borderRadius="5px"
+                        alt={image?.name}
                       />
   
                       <Text
