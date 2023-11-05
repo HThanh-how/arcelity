@@ -128,12 +128,7 @@ export default function SimpleThreeColumns() {
             <Product key={product.id} {...product} />
             
     
-        ))} {gameSale.map((product) => (
-
-          <Product key={product.id} {...product} />
-          
-  
-      ))}
+        ))} 
       </Slider>
 
 
