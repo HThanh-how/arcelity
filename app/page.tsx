@@ -12,6 +12,7 @@ export default function WithSubnavigation() {
   return (
     <>
     <title>Arcelity</title>
+    <meta >Home</meta>
       <HeroSection />
       <ProductSection />
 
