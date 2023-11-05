@@ -118,7 +118,7 @@ function ProductAddToCart(gameSale: GameSale) {
         <AspectRatio maxW={"full"} ratio={4 / 3}>
           <Image
             src={
-              "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg"
+              "img/7.webp"
             }
             alt={`Picture of ${gameSale.name}`}
             roundedTop="lg"

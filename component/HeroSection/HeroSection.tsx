@@ -111,7 +111,7 @@ import {
                     <Image
                       ml={0}
                       boxSize={{ base: "100%", md: "100%", lg: "100%" }}
-                      src={"https://www.apple.com/newsroom/videos/iphone-15-pro-action-button/posters/Apple-iPhone-15-Pro-lineup-Action-button-230912.jpg.large_2x.jpg"}
+                      src={"img/11.webp"}
                       alt="Grand Theft Auto VI"
                       objectFit="cover"
                       rounded={10}
@@ -212,7 +212,7 @@ import {
                   >
                     <Flex>
                       <Image
-                        src={"https://www.apple.com/newsroom/videos/iphone-15-pro-action-button/posters/Apple-iPhone-15-Pro-lineup-Action-button-230912.jpg.large_2x.jpg"}
+                        src={"img/9.webp"}
                         h={"5vw"}
                         w={"4vw"}
                         objectFit="cover"
@@ -279,7 +279,7 @@ import {
               <Image
                 ml={0}
                 boxSize={{ base: "100%", md: "100%", lg: "100%" }}
-                src={"https://cdn.tgdd.vn//News/1546949//tong-hop-hinh-nen-iphone-15-pro-max-4k-iphone-15(5)-800x450.jpg"}
+                src={"img/16.webp"}
                 alt="Grand Theft Auto VI"
                 objectFit="cover"
                 rounded={10}
