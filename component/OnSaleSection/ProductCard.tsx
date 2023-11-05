@@ -147,7 +147,7 @@ function ProductAddToCart(gameSale:GameSale) {
         )}
 
         <Image
-          src={"https://www.apple.com/newsroom/images/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/article/Apple-iPhone-15-Pro-lineup-hero-230912_Full-Bleed-Image.jpg.large.jpg"}
+          src={"https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-den-thumb-600x600.jpg"}
           alt={`Picture of ${gameSale.name}`}
           roundedTop="lg"
         />
