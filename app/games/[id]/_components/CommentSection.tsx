@@ -11,7 +11,7 @@ export default function CommentSection({
   user,
 }: IGameComment) {
   return (
-    <Card p={10} maxW={600} bg={"whiteAlpha.300"} textColor={"white"} mb={5}>
+    <Card p={10} w={"full"} bg={"whiteAlpha.300"} textColor={"white"} mb={5}>
       <Text>{user.username}</Text>
       <Divider my={3} textColor={"whiteAlpha.600"} />
       <Text mb={3}>{ratingStar}/5</Text>
