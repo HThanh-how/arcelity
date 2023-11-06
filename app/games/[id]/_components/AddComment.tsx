@@ -1,4 +1,11 @@
-import { Box, Button, Text, FormLabel, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Text,
+  FormLabel,
+  Input,
+  FormControl,
+} from "@chakra-ui/react";
 import React from "react";
 import Rating from "./Rating";
 import axios from "axios";
@@ -41,8 +48,14 @@ export default function AddComment({ gameId, ...rest }: { gameId: number }) {
       {!isCommented && (
         <form onSubmit={handleSubmit}>
           <Box bg={"whiteAlpha.300"} p={10} borderRadius={5}>
-            <FormLabel>Your comment</FormLabel>
-            <Input type="text" id="comment" _focus={{ bg: "whiteAlpha.400" }} />
+            <FormControl isRequired>
+              <FormLabel>Your comment</FormLabel>
+              <Input
+                type="text"
+                id="comment"
+                _focus={{ bg: "whiteAlpha.400" }}
+              />
+            </FormControl>
             <Rating
               size={30}
               icon="star"

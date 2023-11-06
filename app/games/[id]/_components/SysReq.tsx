@@ -19,7 +19,7 @@ export default function SysReq(systemRequirements: IGameReq) {
       <Divider my={5} />
       <SimpleGrid columns={2} spacing={5}>
         {systemRequirements.systemRequirements.map((sysReq) => (
-          <GridItem key={1}>
+          <GridItem key={sysReq.reqType}>
             <List spacing={5}>
               <ListItem textColor={"whiteAlpha.500"}>
                 {sysReq.reqType === "MIN" ? "Minimum" : "Recommend"}
