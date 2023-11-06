@@ -14,16 +14,14 @@ import axios from "axios";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 
 export default function AddComment({ gameId, ...rest }: { gameId: number }) {
-  const [ratingStar, setRatingStar] = React.useState(0);
-  const [comment, setComment] = React.useState("");
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Submitted");
-    setRatingStar(
-      +(document.getElementById("rating") as HTMLInputElement).value
-    );
-    setComment((document.getElementById("comment") as HTMLInputElement).value);
-
+    const ratingStar = +(document.getElementById("rating") as HTMLInputElement)
+      .value;
+    const comment = (document.getElementById("comment") as HTMLInputElement)
+      .value;
+    console.log(ratingStar, comment);
     try {
       const data = { ratingStar, comment };
       const response = await axios.request({
