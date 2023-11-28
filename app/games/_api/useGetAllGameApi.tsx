@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IGameCard } from "../_interface/IGameCard";
+import { IGameCard } from "@/component/interface/IGameCard";
 
 const useGetAllGameApi = () => {
   const url = "https://game-be-v2.vercel.app/games";
-  const [data, setData] = useState<IGameCard[]>();
+  const [data, setData] = useState<IGameCard[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 

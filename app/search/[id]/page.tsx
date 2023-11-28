@@ -11,12 +11,12 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import React, { use } from "react";
-import GameImages from "./_components/GameImages";
-import BuyGame from "./_components/BuyGame";
-import GameDescription from "./_components/GameDescription";
+import GameImages from "../../../component/ui/game/GameImages";
+import BuyGame from "../../../component/ui/game/BuyGame";
+import GameDescription from "../../../component/ui/game/GameDescription";
 import useGameGetIdApi from "./_api/useGameIdApi";
-import CommentSection from "./_components/CommentSection";
-import AddComment from "./_components/AddComment";
+import CommentSection from "../../../component/ui/game/CommentSection";
+import AddComment from "../../../component/ui/game/AddComment";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 
 export default function GamePage({ params }: { params: { id: string } }) {

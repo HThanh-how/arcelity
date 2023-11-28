@@ -1,7 +1,7 @@
 
-import allGameDataAPI, { Game } from "../AllGameAPI";
-import { IGameCard } from "@/app/games/_interface/IGameCard";
+import allGameDataAPI from "../AllGameAPI";
 import useGetAllGameApi from "@/app/games/_api/useGetAllGameApi";
+import { IGameCard } from "../interface/IGameCard";
 
 const searchGames = (query: string, allGameData: IGameCard[]): IGameCard[] => {
   

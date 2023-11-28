@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IGenre, IGenreList } from "../_interface/IGenre";
+import { IGenre, IGenreList } from "../../../component/interface/IGenre";
 
 const GetDevelopersApi = () => {
   const url = "https://game-be-crud.vercel.app/developer/getall";

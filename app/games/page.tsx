@@ -1,28 +1,26 @@
 "use client";
-import { Container, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Flex, Spacer, filter } from "@chakra-ui/react";
 
-import FilterBar from "./_components/FilterBar";
-import GameList from "./_components/GameList";
-import { createContext, useState } from "react";
-import { FilterContext } from "./_components/_context/FilterContext";
-interface FilterContextProps {
-  handleFilter: (name: string) => void;
-}
+// import FilterBar from "./_components/FilterBar";
+// import GameList from "./_components/GameList";
+import { createContext, useContext, useEffect, useState } from "react";
+import FilterBar from "@/component/ui/search/FilterBar";
+import GameList2 from "@/component/ui/search/GameList2";
+import WishlistContext from "@/context/WishlistContext";
 
 export default function AllGamePage() {
-  const [filter, setFilter] = useState("");
-  const handleFilter = (name: string) => {
-    setFilter(name);
-  };
-
+  const filterCtx = useContext(WishlistContext);
+  const [keyword, setKeyword] = useState<String>("");
+  useEffect(() => {
+    setKeyword(filterCtx.filter);
+  }, [filterCtx.filter]);
   return (
-    <FilterContext.Provider value={{ handleFilter }}>
-      <Container p={0} maxW={{ base: "90%", lg: "75%" }} my={10}>
-        <Flex>
-          <GameList filter={filter} />
-          <FilterBar />
-        </Flex>
-      </Container>
-    </FilterContext.Provider>
+    <Container p={0} maxW={{ base: "90%", lg: "75%" }} my={10}>
+      <Flex>
+        {/* <GameList2 {...filterGenre}/> */}
+        <GameList2 filterText={keyword} />
+        <FilterBar />
+      </Flex>
+    </Container>
   );
 }

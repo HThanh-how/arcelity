@@ -1,8 +1,8 @@
 "use client";
 import { Container, Flex, Spacer } from "@chakra-ui/react";
 import React from "react";
-import FilterBar from "./_components/FilterBar";
-import GameList from "./_components/GameList";
+import FilterBar from "../../component/ui/search/FilterBar";
+import GameList from "../../component/ui/search/GameList";
 
 export default function AllGamePage() {
   return (

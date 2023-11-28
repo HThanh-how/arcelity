@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IGamePurchased } from "../_interface/IGamePurchased";
+import { IGamePurchased } from "../../../component/interface/IGamePurchased";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 
 const useGetPurchasedGameApi = () => {

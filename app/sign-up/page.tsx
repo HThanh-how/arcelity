@@ -25,7 +25,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 
-export default function Login() {
+export default function Signup() {
   const router = useRouter();
   const toast = useToast();
   const [username, setUsername] = useState("");

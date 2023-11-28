@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IGameInfo } from "../_interface/IGameInfo";
+import { IGameInfo } from "../../../../component/interface/IGameInfo";
 
 const useGameGetIdApi = (gameID: string) => {
   const url = "https://game-be-v2.vercel.app/games/getGameInfo/" + gameID;

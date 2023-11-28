@@ -27,7 +27,7 @@ import {
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { IUserInfo } from "../_interface/IUseInfo";
+import { IUserInfo } from "../../../component/interface/IUseInfo";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 import { EditIcon } from "@chakra-ui/icons";
 import useGetUserInfoApi from "../_api/useGetUserInfoApi";

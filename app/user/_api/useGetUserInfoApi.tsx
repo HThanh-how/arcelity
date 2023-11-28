@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IUserInfo } from "../_interface/IUseInfo";
+import { IUserInfo } from "../../../component/interface/IUseInfo";
 import getFromLocalStorage from "@/app/_lib/getFromLocalStorage";
 import { get } from "http";
 
