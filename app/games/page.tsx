@@ -16,13 +16,17 @@ export default function AllGamePage() {
   };
 
   return (
-    <FilterContext.Provider value={{ handleFilter }}>
-      <Container p={0} maxW={{ base: "90%", lg: "75%" }} my={10}>
-        <Flex>
-          <GameList filter={filter} />
-          <FilterBar />
-        </Flex>
-      </Container>
-    </FilterContext.Provider>
+    <>
+      <title>Game Collection</title>
+      <meta name="description" content="Game Collection"></meta>
+      <FilterContext.Provider value={{ handleFilter }}>
+        <Container p={0} maxW={{ base: "90%", lg: "75%" }} my={10}>
+          <Flex>
+            <GameList filter={filter} />
+            <FilterBar />
+          </Flex>
+        </Container>
+      </FilterContext.Provider>
+    </>
   );
 }
