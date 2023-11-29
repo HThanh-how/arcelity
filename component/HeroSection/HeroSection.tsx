@@ -305,7 +305,7 @@ const ImageCarousel = () => {
                 <Image
                   ml={0}
                   boxSize={{ base: "100%", md: "100%", lg: "100%" }}
-                  src={"img/16.webp"}
+                  src={`/img/${image?.id}.webp`}
                   alt="Grand Theft Auto VI"
                   objectFit="cover"
                   rounded={10}
@@ -366,20 +366,6 @@ const ImageCarousel = () => {
                         }
                       >
                         GET NOW
-                      </Button>
-                      <Button
-                        borderColor={"transparent"}
-                        // textColor={'white'}
-                        colorScheme="white"
-                        backgroundColor="transparent"
-                        borderRadius={0}
-                        borderWidth={2}
-                        size="md"
-                        width={200}
-                        _hover={{ backgroundColor: "blackAlpha.600" }}
-                        // onClick={toggleFavoriteStatusHandler}
-                      >
-                        ADD TO WISHLIST
                       </Button>
                     </Flex>
                   </Box>
