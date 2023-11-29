@@ -3,7 +3,7 @@ import ProductSection from "../component/OnSaleSection/ProductSection";
 import { useContext, useEffect } from "react";
 import { Box, Container, Flex, Icon } from "@chakra-ui/react";
 import HeroSection from "@/component/HeroSection/HeroSection";
-import GameList from "../component/ui/search/GameList";
+import GameList from "../component/HeroSection/GameList";
 import { useRouter } from "next/navigation";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import WishlistContext, {

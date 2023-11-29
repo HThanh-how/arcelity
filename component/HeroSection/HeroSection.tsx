@@ -132,7 +132,7 @@ const ImageCarousel = () => {
                     ml={0}
                     boxSize={{ base: "100%", md: "100%", lg: "100%" }}
                     src={`/img/${images[currentImageIndex]?.id}.webp`}
-                    alt="Grand Theft Auto VI"
+                    alt={images[currentImageIndex]?.name}
                     objectFit="cover"
                     rounded={10}
                   />
@@ -143,7 +143,7 @@ const ImageCarousel = () => {
                     p={4}
                     width={"50vw"}
                     height={"full"}
-                    bgGradient={"linear(to-tr, blackAlpha.800, transparent)"}
+                    bgGradient={"linear(to-tr, blackAlpha.600, transparent)"}
                     color="white"
                     borderRadius={10}
                   >
