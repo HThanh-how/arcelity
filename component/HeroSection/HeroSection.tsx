@@ -238,7 +238,7 @@ const ImageCarousel = () => {
                   variant="unstyled"
                   h={"5vw"}
                   ml={8}
-                  opacity={index === currentImageIndex ? 1 : 0.5}
+                  opacity={index === currentImageIndex ? 1 : 0.8}
                   onClick={() => handleImageClick(index)}
                 >
                   <Flex>
@@ -253,10 +253,11 @@ const ImageCarousel = () => {
 
                     <Text
                       textColor={"white"}
-                      fontWeight={"300"}
+                      fontWeight={index === currentImageIndex ? "800" : "500"}
                       fontSize={"xl"}
                       p={4}
                       style={{ overflowWrap: "break-word" }}
+                      
                     >
                       {image?.name}{" "}
                     </Text>
