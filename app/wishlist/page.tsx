@@ -15,6 +15,9 @@ export default function WishlistPage() {
   return (
     // <WishlistContextProvider
     //   children={
+      <>
+      <title>Wishlist</title>
+      <meta name="description" content="Wishlist Arcelity"></meta>
         <Container p={0} maxW={"75%"} my={10}>
           <Heading mb={5}>Wishlist</Heading>
           {favoriteCtx.totalFavorites === 0 ? (
@@ -22,7 +25,7 @@ export default function WishlistPage() {
           ) : (
             <ItemsList list={favoriteCtx.favorites} isCart={false}/>
           )}
-        </Container>
+        </Container></>
     //   }
     // />
   );
