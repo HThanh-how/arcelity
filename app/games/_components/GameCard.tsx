@@ -75,7 +75,7 @@ export default function GameCard({
         <CardBody p={0}>
           <Image
             alt="The last of my pizza"
-            src="https://cdn1.epicgames.com/offer/0c40923dd1174a768f732a3b013dcff2/EGS_TheLastofUsPartI_NaughtyDogLLC_S2_1200x1600-41d1b88814bea2ee8cb7986ec24713e0?h=480&quality=medium&resize=1&w=360"
+            src={`/img/${id}.webp`}
             borderRadius="lg"
             opacity={0.8}
             _hover={{ opacity: 1 }}

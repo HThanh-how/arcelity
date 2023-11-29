@@ -43,7 +43,7 @@ export default function GamePage({ params }: { params: { id: string } }) {
           <SimpleGrid columns={{ sm: 1, md: 1, lg: 4 }} spacing={0}>
             <GridItem colSpan={3}>
               <Skeleton isLoaded={!isLoading}>
-                <GameImages />
+                <GameImages id={params.id}/>
               </Skeleton>
             </GridItem>
             <GridItem colSpan={1}>
