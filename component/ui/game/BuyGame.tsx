@@ -56,6 +56,7 @@ export default function BuyGame({
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname) 
     localStorage.setItem("historyPathname", pathname);
   }, []);
 

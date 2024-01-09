@@ -95,6 +95,7 @@ const ImageCarousel = () => {
   };
 
   useEffect(() => {
+  
     localStorage.setItem("historyPathname", "/");
   }, []);
 
