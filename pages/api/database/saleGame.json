@@ -1,0 +1,82 @@
+
+[
+{
+    "id": 9,
+    "name": "Minecraft",
+    "description": "Sandbox game",
+    "releaseDate": "2011-11-18T15:20:00.000Z",
+    "price": 27,
+    "gameUrl": null,
+    "thumbnailUrl": null,
+    "genres": [
+      {
+        "id": 8,
+        "name": "Sandbox"
+      }
+    ],
+    "saleDetails": [{
+      "discountRate": 20
+    }
+      
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Valorant",
+    "description": "First-person shooter",
+    "releaseDate": "2020-06-02T09:10:00.000Z",
+    "price": 10,
+    "gameUrl": null,
+    "thumbnailUrl": null,
+    "genres": [
+      {
+        "id": 5,
+        "name": "First-Person Shooter"
+      }
+    ],
+    "saleDetails": [{
+      "discountRate": 30
+    }
+      
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Animal Crossing: New Horizons",
+    "description": "Life simulation game",
+    "releaseDate": "2020-03-20T10:00:00.000Z",
+    "price": 60,
+    "gameUrl": null,
+    "thumbnailUrl": null,
+    "genres": [
+      {
+        "id": 9,
+        "name": "Life Simulation"
+      }
+    ],
+    "saleDetails": [{
+      "discountRate": 40
+    }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Call of Duty: Warzone",
+    "description": "Battle royale game",
+    "releaseDate": "2020-03-10T14:30:00.000Z",
+    "price": 10,
+    "gameUrl": null,
+    "thumbnailUrl": null,
+    "genres": [
+      {
+        "id": 10,
+        "name": "Battle Royale"
+      }
+    ],
+    "saleDetails": [{
+      "discountRate": 50
+    }
+      
+    ]
+  }
+]

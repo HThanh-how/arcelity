@@ -52,7 +52,7 @@ export default function SimpleThreeColumns() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://game-be-v2.vercel.app/games/gamesOnSale"
+          "https://arcelity.vercel.app/api/sale"
         );
         const gameData: GameSale[] = response.data;
         setGameSale(gameData);

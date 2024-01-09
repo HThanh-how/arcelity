@@ -194,9 +194,7 @@ export default function NavBar() {
                 }}
                 cursor={"pointer"}
               >
-                <Link href={`https://forms.gle/ThkMbDncWqYHADmN7`}>
-                  FEEDBACK
-                </Link>
+                
               </Box>
             </HStack>
           </HStack>

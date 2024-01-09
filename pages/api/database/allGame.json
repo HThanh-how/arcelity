@@ -1,0 +1,488 @@
+[
+    {
+      "id": 1,
+      "name": "FIFA 22",
+      "description": "Soccer simulation game",
+      "releaseDate": "2021-10-01T10:00:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 1,
+          "name": "Soccer"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Assassin's Creed Valhalla",
+      "description": "Action-adventure RPG",
+      "releaseDate": "2020-11-10T14:30:00.000Z",
+      "price": 50,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Grand Theft Auto V",
+      "description": "Open-world action-adventure",
+      "releaseDate": "2013-09-17T12:45:00.000Z",
+      "price": 30,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 4,
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "description": "Action-adventure RPG",
+      "releaseDate": "2017-03-03T15:20:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Red Dead Redemption 2",
+      "description": "Action-adventure western",
+      "releaseDate": "2018-10-26T09:10:00.000Z",
+      "price": 40,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Halo Infinite",
+      "description": "First-person shooter",
+      "releaseDate": "2021-12-08T10:00:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 5,
+          "name": "First-Person Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cyberpunk 2077",
+      "description": "Action role-playing game",
+      "releaseDate": "2020-12-10T14:30:00.000Z",
+      "price": 50,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 6,
+          "name": "Role-Playing Game"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Among Us",
+      "description": "Multiplayer online party game",
+      "releaseDate": "2018-11-16T12:45:00.000Z",
+      "price": 5,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 10,
+          "name": "Battle Royale"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Minecraft",
+      "description": "Sandbox game",
+      "releaseDate": "2011-11-18T15:20:00.000Z",
+      "price": 27,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 8,
+          "name": "Sandbox"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Valorant",
+      "description": "First-person shooter",
+      "releaseDate": "2020-06-02T09:10:00.000Z",
+      "price": 10,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 5,
+          "name": "First-Person Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Animal Crossing: New Horizons",
+      "description": "Life simulation game",
+      "releaseDate": "2020-03-20T10:00:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 9,
+          "name": "Life Simulation"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Call of Duty: Warzone",
+      "description": "Battle royale game",
+      "releaseDate": "2020-03-10T14:30:00.000Z",
+      "price": 10,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 10,
+          "name": "Battle Royale"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 13,
+      "name": "The Witcher 3: Wild Hunt",
+      "description": "Action role-playing game",
+      "releaseDate": "2015-05-19T12:45:00.000Z",
+      "price": 40,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 6,
+          "name": "Role-Playing Game"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Apex Legends",
+      "description": "Battle royale game",
+      "releaseDate": "2019-02-04T15:20:00.000Z",
+      "price": 10,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 10,
+          "name": "Battle Royale"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Fortnite",
+      "description": "Battle royale game",
+      "releaseDate": "2017-07-25T09:10:00.000Z",
+      "price": 10,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 10,
+          "name": "Battle Royale"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Madden NFL 23",
+      "description": "American football simulation",
+      "releaseDate": "2022-08-25T14:30:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 12,
+          "name": "Tactical Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 17,
+      "name": "The Sims 5",
+      "description": "Life simulation game",
+      "releaseDate": "2022-05-20T10:00:00.000Z",
+      "price": 50,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 12,
+          "name": "Tactical Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Battlefield 6",
+      "description": "First-person shooter",
+      "releaseDate": "2023-03-15T12:45:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 5,
+          "name": "First-Person Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Far Cry 6",
+      "description": "First-person shooter",
+      "releaseDate": "2021-10-07T14:30:00.000Z",
+      "price": 50,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Rainbow Six Siege",
+      "description": "Tactical shooter",
+      "releaseDate": "2015-12-01T10:00:00.000Z",
+      "price": 30,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 12,
+          "name": "Tactical Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Assassin's Creed Odyssey",
+      "description": "Action role-playing game",
+      "releaseDate": "2018-10-05T12:45:00.000Z",
+      "price": 40,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Red Dead Online",
+      "description": "Action-adventure western (online)",
+      "releaseDate": "2018-11-27T14:30:00.000Z",
+      "price": 10,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 5,
+          "name": "First-Person Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 23,
+      "name": "L.A. Noire",
+      "description": "Detective action-adventure",
+      "releaseDate": "2011-11-14T10:00:00.000Z",
+      "price": 20,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Bully",
+      "description": "Action-adventure game",
+      "releaseDate": "2006-10-17T12:45:00.000Z",
+      "price": 20,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 2,
+          "name": "Action-Adventure"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Super Mario Odyssey",
+      "description": "Platformer",
+      "releaseDate": "2017-10-27T14:30:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 12,
+          "name": "Tactical Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Splatoon 2",
+      "description": "Third-person shooter",
+      "releaseDate": "2017-07-21T10:00:00.000Z",
+      "price": 50,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 12,
+          "name": "Tactical Shooter"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Pokémon Sword and Shield",
+      "description": "Role-playing game",
+      "releaseDate": "2019-11-15T12:45:00.000Z",
+      "price": 60,
+      "gameUrl": null,
+      "thumbnailUrl": null,
+      "genres": [
+        {
+          "id": 6,
+          "name": "Role-Playing Game"
+        }
+      ],
+      "saleDetails": [
+        
+      ]
+    }
+  ]
