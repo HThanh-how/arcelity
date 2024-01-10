@@ -91,8 +91,10 @@ export default function UpdateProfileApi() {
     <Flex my={5} transition={"0.3s"}>
       <Text
         fontSize={{ md: 20, lg: 30 }}
-        ml={{ md: 0, lg: 10 }}
+        // ml={{ md: 0, lg: 10 }}
         textColor={"white"}
+        fontWeight={"800"}
+        // <Text fontSize={40} color={'#ffffff'} fontWeight={"bold"} mb={10}>David Brown</Text>
       >
         {fullName}{" "}
       </Text>

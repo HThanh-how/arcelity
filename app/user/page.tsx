@@ -17,6 +17,7 @@ export default function UserPage() {
     //   new Set(storage.map((item) => item.id))
     // );
     let tmp: IGame[] = [];
+    if (storage)
     storage.map((item) => {
       let i: number;
       let flag: boolean = true;

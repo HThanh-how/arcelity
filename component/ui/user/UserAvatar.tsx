@@ -43,8 +43,8 @@ export default function UserAvatar() {
         </GridItem>
         {/* account description */}
         <GridItem colSpan={2} ml={10}>
-          {/* <UpdateProfileApi /> */}
-          <Text fontSize={40} color={'#ffffff'} fontWeight={"bold"} mb={10}>David Brown</Text>
+          <UpdateProfileApi />
+          {/* <Text fontSize={40} color={'#ffffff'} fontWeight={"bold"} mb={10}>David Brown</Text> */}
           <HStack spacing={5} >
             {/* account point */}
             <Container p={0} m={0}>
