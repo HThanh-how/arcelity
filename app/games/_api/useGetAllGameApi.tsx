@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { IGameCard } from "../_interface/IGameCard";
 
 const useGetAllGameApi = () => {
-  const url = "https://game-be-v2.vercel.app/games";
+  const url = "https://arcelity.vercel.app/api/game";
   const [data, setData] = useState<IGameCard[]>();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);

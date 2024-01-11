@@ -6,7 +6,7 @@ import { IGameCard } from "./interface/IGameCard";
 
 
 const allGameDataAPI = () => {
-  const url = "https://game-be-v2.vercel.app/games";
+  const url = "https://arcelity.vercel.app/api/game";
   const [allGameData, setAllGameData] = useState<IGameCard[]>([]);
   const [images, setImages] = useState<IGameCard[]>([]);
 
