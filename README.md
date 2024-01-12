@@ -58,3 +58,63 @@ Before you begin, ensure you have the following installed:
 
    ```bash
    git clone https://github.com/HThanh-how/arcelity
+
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd arcelity
+   ```
+
+3. **Install frontend dependencies:**
+
+   ```bash
+   cd client
+   npm install
+   ```
+
+4. **Run the frontend development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+   The frontend should now be accessible at [http://localhost:3000](http://localhost:3000).
+
+5. **Switch to the backend directory:**
+
+   ```bash
+   cd ../server
+   ```
+
+6. **Install backend dependencies:**
+
+   ```bash
+   ./mvnw clean install
+   ```
+
+   Note: On Windows, use `mvnw.cmd` instead.
+
+7. **Start the Spring Boot application:**
+
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+
+   The backend should now be running at [http://localhost:8080](http://localhost:8080).
+
+8. **MongoDB Configuration:**
+
+   - Ensure that MongoDB is running locally or update the MongoDB connection settings in the `application.properties` file located in the `backend/src/main/resources` directory.
+
+9. **Accessing the Application:**
+
+   - Open your web browser and go to [http://localhost:3000](http://localhost:3000) to interact with the Game Marketplace.
+
+10. **Admin Dashboard:**
+
+   - To access the admin dashboard, use the provided admin credentials in the application or create a new admin account.
+
+Congratulations! You've successfully set up the E-commerce Game Marketplace project. Feel free to explore the features and customize the platform based on your requirements.
+
+For any issues or further assistance, refer to the project's documentation or community forums. Enjoy your Game Marketplace!
